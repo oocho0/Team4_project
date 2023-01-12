@@ -1,0 +1,185 @@
+,품종_영문,분류,품종_국문
+0,Portuguese Podengo Pequeno,houndgroup,포르투기스 포덴고 페케노
+1,Redbone Coonhound,houndgroup,레드본 쿤하운드
+2,Rhodesian Ridgeback,houndgroup,로디시안 리지백
+3,Saluki,houndgroup,살루키
+4,Scottish Deerhound,houndgroup,스코티시 디어하운드
+5,Sloughi,houndgroup,슬루기
+6,Treeing Walker Coonhound,houndgroup,트링 워커 쿤하운드
+7,Whippet,houndgroup,휘핏
+8,American Water Spaniel,spaniels group,아메리칸 워터 스패니얼
+9,Barbet,sporting group,바벳
+10,Boykin Spaniel,spaniels group,보이킨 스패니얼
+11,Bracco Italiano,sporting group,브라코 이탈리아노
+12,Brittany,sporting group,브리타니
+13,Chesapeake Bay Retriever,sporting group,체서피크 베이 레트리버
+14,Clumber Spaniel,spaniels group,클럼버 스패니얼
+15,Cocker Spaniel,spaniels group,코커 스패니얼
+16,Curly-Coated Retriever,sporting group,컬리코티드 레트리버
+17,English Cocker Spaniel,spaniels group,잉글리시 코커 스패니얼
+18,English Setter,sporting group,잉글리시 세터
+19,English Springer Spaniel,spaniels group,잉글리시 스프링어 스패니얼
+20,Field Spaniel,spaniels group,필드 스패니얼
+21,Flat-Coated Retriever,sporting group,플랫코티드 레트리버
+22,German Shorthaired Pointer,sporting group,저먼 쇼트헤어드 포인터
+23,German Wirehaired Pointer,sporting group,저먼 와이어헤어드 포인터
+24,Golden Retriever,sporting group,골든 리트리버
+25,Gordon Setter,sporting group,고든 세터
+26,Irish Red and White Setter,sporting group,아이리시 레드 앤드 화이트 세터
+27,Irish Setter,sporting group,아이리시 세터
+28,Irish Water Spaniel,spaniels group,아이리시 워터 스패니얼
+29,Labrador Retriever,sporting group,래브라도 리트리버
+30,Lagotto Romagnolo,sporting group,라고토 로마그놀로
+31,Nederlandse Kooikerhondje,sporting group,네덜란드 쿠이커혼제
+32,Nova Scotia Duck Tolling Retriever,sporting group,노바 스코셔 덕 톨링 레트리버
+33,Pointer,sporting group,포인터
+34,Spinone Italiano,sporting group,스피노네 이탈리아노
+35,Sussex Spaniel,spaniels group,서식스 스패니얼
+36,Vizsla,sporting group,비즐라
+37,Weimaraner,sporting group,와이마라너
+38,Welsh Springer Spaniel,spaniels group,웰시 스프링어 스패니얼
+39,Wirehaired Pointing Griffon,sporting group,와이어헤어드 포인팅 그리펀
+40,Wirehaired Vizsla,sporting group,와이어헤어드 비즐라
+41,Akita,working group,아키타
+42,Alaskan Malamute,working group,알래스칸 맬러뮤트
+43,Anatolian Shepherd Dog,working group,아나톨리언 셰퍼드 독
+44,Bernese Mountain Dog,working group,버니즈 마운틴 도그
+45,Black Russian Terrier,working group,블랙 러시안 테리어
+46,Boerboel,working group,보어보엘
+47,Boxer,working group,복서
+48,Bullmastiff,working group,불 마스티프
+49,Cane Corso,working group,카네코르소
+50,Chinook,working group,치누크
+51,Doberman Pinscher,working group,도베르만 핀셔
+52,Dogo Argentino,working group,도고 아르헨티노
+53,Dogue de Bordeaux,working group,도그 드 보르도
+54,German Pinscher,working group,저먼 핀셔
+55,Giant Schnauzer,working group,자이언트 슈나우저
+56,Great Dane,working group,그레이트 데인
+57,Great Pyrenees,working group,그레이트 피레니즈
+58,Greater Swiss Mountain Dog,working group,그레이터 스위스 마운틴 도그
+59,Komondor,working group,코몬도르
+60,Kuvasz,working group,쿠바스
+61,Leonberger,working group,레온베르거
+62,Mastiff,working group,마스티프
+63,Neapolitan Mastiff,working group,나폴리탄 마스티프
+64,Newfoundland,working group,뉴펀들랜드
+65,Portuguese Water Dog,working group,포르투갈 워터 도그
+66,Rottweiler,working group,로트와일러
+67,Saint Bernard,working group,세인트 버나드
+68,Samoyed,working group,사모예드
+69,Siberian Husky,working group,시베리안 허스키
+70,Standard Schnauzer,working group,스탠더드 슈나우저
+71,Tibetan Mastiff,working group,티베탄 마스티프
+72,Airedale Terrier,terrier group,에어데일 테리어
+73,American Hairless Terrier,terrier group,아메리칸 헤어리스 테리어
+74,American Staffordshire Terrier,terrier group,아메리칸 스태퍼드셔 테리어
+75,Australian Terrier,terrier group,오스트레일리언 테리어
+76,Bedlington Terrier,terrier group,베들링턴 테리어
+77,Border Terrier,terrier group,보더 테리어
+78,Bull Terrier,larger terrier group,불 테리어
+79,Cairn Terrier,terrier group,케언 테리어
+80,Cesky Terrier,terrier group,체스키 테리어
+81,Dandie Dinmont Terrier,terrier group,댄디 딘몬트 테리어
+82,Glen of Imaal Terrier,terrier group,글렌 오브 이말 테리어
+83,Irish Terrier,terrier group,아이리시 테리어
+84,Kerry Blue Terrier,terrier group,케리 블루 테리어
+85,Lakeland Terrier,terrier group,레이크랜드 테리어
+86,Manchester Terrier (Standard),terrier group,스탠더드 멘체스터 테리어
+87,Miniature Bull Terrier,larger terrier group,미니어처 불 테리어
+88,Miniature Schnauzer,terrier group,미니어처 슈나우저
+89,Norfolk Terrier,terrier group,노퍽 테리어
+90,Norwich Terrier,terrier group,노리치 테리어
+91,Parson Russell Terrier,terrier group,파슨 러셀 테리어
+92,Rat Terrier,terrier group,렛 테리어
+93,Russell Terrier,terrier group,잭 러셀 테리어
+94,Scottish Terrier,terrier group,스코티시 테리어
+95,Sealyham Terrier,terrier group,실리엄 테리어
+96,Skye Terrier,terrier group,스카이 테리어
+97,Smooth Fox Terrier,terrier group,스무스 폭스 테리어
+98,Soft Coated Wheaten Terrier,terrier group,소프트 코티드 휘튼 테리어
+99,Staffordshire Bull Terrier,larger terrier group,스태퍼드셔 불 테리어
+100,Welsh Terrier,terrier group,웰시 테리어
+101,West Highland White Terrier,terrier group,웨스트 하이랜드 화이트 테리어
+102,Wire Fox Terrier,terrier group,와이어 폭스 테리어
+103,Affenpinscher,toy group,아펜핀셔
+104,Biewer Terrier,toy group,뷰어 테리어
+105,Brussels Griffon,toy group,브뤼셀 그리펀
+106,Cavalier King Charles Spaniel,toy group,카바리에 킹 찰스 스파니엘
+107,Chihuahua,toy group,치와와
+108,Chinese Crested,toy group,차이니스 크레스티드
+109,English Toy Spaniel,toy group,잉글리시 토이 스패니얼
+110,Havanese,toy group,허배너스
+111,Italian Greyhound,toy group,이탈리안 그레이하운드
+112,Japanese Chin,toy group,재퍼니스 친
+113,Maltese,toy group,몰티즈
+114,Manchester Terrier (Toy),toy group,토이 멘체스터 테리어
+115,Miniature Pinscher,toy group,미니어처 핀셔
+116,Papillon,toy group,파피용
+117,Pekingese,toy group,페키니즈
+118,Pomeranian,toy group,포메라니안
+119,Poodle (Toy),toy group,토이 푸들
+120,Pug,toy group,퍼그
+121,Russian Toy,toy group,러시안 토이
+122,Shih Tzu,toy group,시츄
+123,Silky Terrier,toy group,실키 테리어
+124,Toy Fox Terrier,toy group,토이 폭스 테리어
+125,Yorkshire Terrier,toy group,요크셔 테리어
+126,American Eskimo Dog,non-sporting group,아메리칸 에스키모 도그
+127,Bichon Frise,non-sporting group,비숑 프리제
+128,Boston Terrier,non-sporting group,보스턴 테리어
+129,Bulldog,non-sporting group,불독
+130,Chinese Shar-Pei,non-sporting group,차이니스 샤페이
+131,Chow Chow,non-sporting group,차우차우
+132,Coton de Tulear,non-sporting group,꼬동 드 툴레아
+133,Dalmatian,dalmatian,달마티안
+134,Finnish Spitz,non-sporting group,피니시 스피츠
+135,French Bulldog,non-sporting group,프렌치 불도그
+136,Keeshond,non-sporting group,케이스혼트
+137,Lhasa Apso,non-sporting group,라사압소
+138,Löwchen,non-sporting group,로첸
+139,Norwegian Lundehund,non-sporting group,노르웨지언 룬드훈트
+140,Poodle (Miniature),non-sporting group,미니어처 푸들
+141,Poodle (Standard),non-sporting group,스탠더드 푸들
+142,Schipperke,schipperke,스키퍼키
+143,Shiba Inu,non-sporting group,시바 이누
+144,Tibetan Spaniel,non-sporting group,티베탄 스패니얼
+145,Tibetan Terrier,non-sporting group,티베탄 테리어
+146,Xoloitzcuintli,non-sporting group,숄로이츠퀸틀
+147,Australian Cattle Dog,herding group,오스트레일리언 캐틀 도그
+148,Australian Shepherd,herding group,오스트레일리언 셰퍼드
+149,Bearded Collie,herding group,비어디드 콜리
+150,Beauceron,herding group,보스롱
+151,Belgian Laekenois,herding group,벨지안라케노이스
+152,Belgian Malinois,herding group,벨지안 말리노이즈
+153,Belgian Sheepdog,herding group,벨지안 쉽독
+154,Belgian Tervuren,herding group,벨지안 터뷰렌
+155,Bergamasco Sheepdog,herding group,버가마스코 쉽독
+156,Berger Picard,herding group,버거피카드
+157,Border Collie,herding group,보더 콜리
+158,Bouvier des Flandres,herding group,부비에 데 플랑드르
+159,Briard,herding group,브리아드
+160,Canaan Dog,herding group,케이넌 도그
+161,Cardigan Welsh Corgi,corgis group,카디건 웰시코기
+162,Collie,herding group,콜리
+163,Entlebucher Mountain Dog,herding group,엔틀부처 마운틴 도그
+164,Finnish Lapphund,herding group,피니시 라프훈트
+165,German Shepherd Dog,herding group,저먼 셰퍼드
+166,Icelandic Sheepdog,herding group,아이슬란딕 쉽독
+167,Miniature American Shepherd,herding group,미니어처 아메리칸 셰퍼드
+168,Mudi,herding group,무디
+169,Norwegian Buhund,herding group,노르웨이안 부훈트
+170,Old English Sheepdog,herding group,올드 잉글리시 쉽독
+171,Pembroke Welsh Corgi,corgis group,펨브록 웰시 코기
+172,Polish Lowland Sheepdog,herding group,폴리시 롤런드 쉽독
+173,Puli,herding group,풀리
+174,Pumi,herding group,푸미
+175,Pyrenean Shepherd,herding group,피레니언 셰퍼드
+176,Shetland Sheepdog,herding group,셰틀랜드 쉽독
+177,Spanish Water Dog,herding group,스패니시 워터 도그
+178,Swedish Vallhund,herding group,스위디쉬 발훈트
+179,Japanese Spitz,toy group,재페니스 스피츠
+180,Jindo,non-sporting group,진돗개
+181,Poongsan,non-sporting group,풍산개
+182,Sapsal,non-sporting group,삽살개
+183,Beagle,working group,비글
