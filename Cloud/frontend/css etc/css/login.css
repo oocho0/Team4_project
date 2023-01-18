@@ -1,0 +1,78 @@
+.main-btn{
+  outline:none;
+  border:none;
+  cursor:pointer;
+}
+
+.main {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 100px;
+  line-height: 3;
+}
+
+.main__wrapper {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__h1{
+  margin-bottom: 20px;
+}
+
+.main__input input {
+  outline: none;
+  border:none;
+  border-bottom: 1px solid black;
+  width: 280px;
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.main__input input::placeholder{
+  transition:top 500ms ease;
+  position:relative;
+  top:10px;
+ }
+
+ .main__input input:focus::placeholder{
+  top:-14px;
+  font-size: smaller;
+ }
+
+ .main__input input:active::placeholder {
+  display: inline-block;
+ }
+
+.login-btn {
+  background-color: RED;
+  width: 220px;
+  height: 50px;
+  color: Beige;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.login-btn:hover{
+  opacity: 0.8;
+}
+
+.find-span{
+  color: #ff0000;
+  font-size: 14px;
+}
+
+.find-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0 8px;
+  font-size: 16px;
+}

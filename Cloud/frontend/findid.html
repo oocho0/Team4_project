@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet"> -->
+    <script src="https://kit.fontawesome.com/fa3667321f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Favicon icon 1.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function w3_open() {
+        document.getElementById("mySidebar").style.width = "100%";
+        // document.getElementById("mySidebar").style.height = "100%";
+        document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</head>
+<style>
+    header {
+        position: fixed;
+        background-color: rgb(255,0,0);
+        color: white;
+        height: 65px;
+        top :0;
+        right: 0;
+        left: 0;
+        padding: 10px 10px 5px 30px;
+        z-index: 2;
+    }
+    #headmenu {
+        font-size: 30px;
+        margin-left: 10px;
+    }
+    #headmenu2 {
+        position: absolute;
+        right: 30px;
+        top:25px;
+        width: 300px;
+    }
+    .headmenu2 {
+        /* margin-left: 1500px; */
+        /* position: absolute;
+        right: 20px;
+        top:20px; */
+        font-size: 17px;
+        margin: 0px 10px;
+    }
+    #headform a {
+        color:white;
+        text-decoration: none;
+    }
+
+    #section {
+        width: 800px;
+        margin: 250px auto;
+        color:rgb(255,0,0);
+    }
+    #login {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .txtinput {
+        text-align: left;
+        margin: 20px auto;
+        width: 500px;
+    }
+    #txtinput {
+        text-align: center;
+    }
+    .txt {
+        font-weight: 1000;
+    }
+    .idpwd {
+        width:500px;
+        height: 40px;
+        font-size: 15px;
+        margin: 10px auto;
+    }
+    .btn {
+        width: 500px;
+        height: 48px;
+        font-size: 17px;
+        color: rgb(245, 245, 220);
+        margin: 10px 3px 25px;
+        background-color: rgb(255,0,0);
+        border: 0ch;
+    }
+    .btn:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+</style>
+<body>
+    <div id="header">
+        <header id="head">
+            <form id="headform">
+                <div class=" w3-bar-block" style="display:none; background-color:rgb(255, 0, 0)" id="mySidebar">
+                    <button onclick="w3_close()" class="w3-bar-item w3-button w3-large" style="background-color:rgb(255, 0, 0);">Close &times;</button>
+                        </div>
+    </div>
+    <div id="section">
+        <form>
+        <div id="login">
+            <h3 style="font-weight:bold">아이디ㆍ비밀번호 찾기</h2>
+        </div>
+        <div class="txtinput">
+            <label for="txtid"><span class="txt">아이디 찾기</span><br/></label>
+            <input type="text" id="txtmail" name="txtid" class="idpwd" placeholder="Email을 입력해주시길 바랍니다"/><br/>
+            <input type="button" id="btnlogin" name="btnlogin" class="btn" value="아이디 찾기">
+        </div>
+        <div class="txtinput">
+            <label for="txtpwd"><span class="txt">비밀번호 찾기</span><br/></label>
+            <input type="text" id="txtid" name="txtpwd" class="idpwd" placeholder="ID를 입력해주시길 바랍니다"/>
+            <input type="text" id="txtmail2" name="txtpwd" class="idpwd" placeholder="Email을 입력해주시길 바랍니다"/>
+            <input type="button" id="btnsignup" name="btnlogin" class="btn" value="비밀번호 찾기">
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
