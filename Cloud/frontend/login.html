@@ -16,7 +16,7 @@
 
 <body>
 
-  <h2>RUNDog</h2>
+  <h1>RUNDog</h1>
 
   <nav class="main-nav">
 	<ul>
@@ -27,7 +27,7 @@
 
 <div class="user-modal">
 		<div class="user-modal-container">
-      <h1>RUNDog</h1>
+      <h2>RUNDog</h2>
 			<ul class="switcher">
 				<li><a href="#1">로그인</a></li>
 				<li><a href="#0">회원가입</a></li>
@@ -91,14 +91,32 @@
 						<span class="error-message">비밀번호는 6자 이상이어야 합니다!</span>
 					</p>
 
-          <p class="fieldset">
+          <!-- <p class="fieldset">
 						<label class="image-replace username" for="signup-username">핸드폰 인증</label>
 						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="핸드폰 인증 번호 입력">
 						<span class="error-message">유효한 핸드폰 번호를 입력하시길 바랍니다!</span>
-					</p>
+					</p> -->
+         <label for="accept-terms">핸드폰 번호 입력</label>
+         
+          <div class="phone">
+            <input id="phone1" type="text" size="1" maxlength="3" oninput="changePhone1()"> -
+            <input id="phone2" type="text" size="3" maxlength="4" oninput="changePhone2()"> -
+            <input id="phone3" type="text" size="3" maxlength="4" oninput="changePhone3()">
 
-          <input type="text" style="width: 455px;" placeholder="숫자를 입력해주시길 바랍니다">
-          <button>인증</button>
+        </div>
+
+          <div class="auth">
+           <div id="certificationNumber">000000</div>
+           <button disabled id="sendMessage" onclick="getToken()">인증번호 전송</button>
+       </div>
+
+       <div class="timer">
+           <div id="timeLimit">03:00</div>
+           <button disabled id="completion" onclick="checkCompletion()">인증확인</button>
+       </div>
+
+          <!-- <input type="text" style="width: 455px;" placeholder="숫자를 입력해주시길 바랍니다">
+          <button>인증</button> -->
 
 					<p class="fieldset">
 						<input type="checkbox" id="accept-terms">

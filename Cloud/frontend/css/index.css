@@ -4,6 +4,7 @@ h1 {
   font-weight:thin;
   font-size: 48px;
   margin:0 0 40px;
+  margin-top: 4%;
 }
 
 /* .button {
@@ -52,6 +53,7 @@ button {
   letter-spacing: 1px;
   outline: none;
   cursor: pointer;
+  margin-top: 29%;
 }
 
 a {  color: #623412;

@@ -4,26 +4,28 @@
 
 h1 {
   text-align:center;
-  color:#ef0000;
+  color:#E3C497;
   font-weight:thin;
-  font-size: 48px;
+  font-size: 47px;
   margin:0 0 40px;
+  margin-top: 4%;
 }
 
 h2 {
   text-align:center;
   color:#ef0000;
-  font-weight:$thin;
-  font-size: 47px;
+  font-weight:thin;
+  font-size: 48px;
   margin:0 0 40px;
+  margin-top: 10%;
 }
 
 button {
-  background: #FFEFD5;
+  background: #E1C6B2;
   width: 70px;
   height: 29px;
   border: none;
-  color: #deb887;
+  color: #87633A;
   border-radius: 6px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
@@ -380,6 +382,59 @@ body {
 	        animation: borderslide-3px .5s;
 	border-bottom: 1px solid rgba(255, 255, 255, 1);
 	padding-bottom: 3px;
+}
+
+.phone {
+    display: flex;
+    justify-content: space-between;
+    line-height: 35px;
+    margin-top: 3%;
+}
+
+#phone1 {
+    width: 18%;
+}
+
+#phone2 {
+    width: 30%;
+}
+
+#phone3 {
+    width: 30%;
+}
+
+.auth {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.auth div {
+    width: 30%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.auth button {
+    width: 70%;
+}
+
+.timer div {
+    width: 30%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.timer button {
+    width: 70%;
 }
 
 @-webkit-keyframes borderslide-3px {
