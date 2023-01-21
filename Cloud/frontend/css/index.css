@@ -1,0 +1,62 @@
+h1 {
+  text-align:center;
+  color:#ef0000;
+  font-weight:thin;
+  font-size: 48px;
+  margin:0 0 40px;
+}
+
+/* .button {
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:2rem;
+  font-weight:$bold;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  background:$main;
+  color:#d2691e;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
+  }
+}
+
+.button-block {
+  display:block;
+  width:100%;
+} */
+
+/* .button{
+  border: none;
+  padding: 15px;
+  background-color: maroon;
+  color: white;
+  border-radius: 15px;
+  font-family: "Lucida Console", "Courier New", monospace;
+} */
+
+button {
+  background: #C92519;
+  width: 370px;
+  margin:auto;
+  display:block;
+  height: 50px;
+  border: none;
+  color: #623412;
+  border-radius: 6px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+}
+
+a {  color: #623412;
+}
+
+body { height: 150px;
+
+}
