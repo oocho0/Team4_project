@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RUNDog</title>
+  <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+<h1 id="title">RUNDog</h1>
+<div id="form-container">
+  <p id="description"><strong>강아지 회원 가입 입력란 입니다 입력 해주시길 바랍니다</strong></p>
+  <form id="rundohnote" for="submit">
+    <div class="imagebox">
+    <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-18.jpg" id="image" width="80px" height="80px">
+    <input class="file" type="file" onchange="loadFile(event)"/>
+    <div><label id="name-label" for="name">반려견 이름</label></div>
+    <div><input type="text" name="name" id="name" class="input-field" placeholder="여기에 전체 이름을 입력하시길 바랍니다" required /></div>
+    <div><label id="registrationnumber-label" for="registrationnumber-label">등록번호</label></div>
+    <div><input type="registration number" name="registration number" id="registration number" class="input-field" placeholder="번호을 입력하시길 바랍니다" required /></div>
+    <br>
+    <div><label class="birthdaydate" for="birthdaydate">생년월일</label></div>
+    <div><input class="date" type="date"></div>
+    <br>
+    <div><label id="weight-label" for="weight">몸무게</label></div>
+    <div><input type="weight" name="weight" id="weight" class="input-field" placeholder="내용을 입력하시길 바랍니다" required /><span>Kg</span><br></div>
+    <div><label for="dropdown">품종</label></div>
+    <div><select class="dropdown">
+        <option disabled value>하나의 옵션 선택을 해주시길 바랍니다</option>
+        <option>시바견</option>
+        <option>바셋하운드</option>
+        <option>골든 리트리버</option>
+        <option>셰틀랜드 쉽독</option>
+        <option>불 테리어</option>
+        <option>불독</option>
+        <option>라포니안 허더</option>
+        <option>더치 샤펜도스</option>
+        <option>기슈</option>
+        <option>브라질리언 테리어</option>
+        <option>무디</option>
+        <option>맨체스터 테리어</option>
+        <option>레이클랜드 테리어</option>
+        <option>노리치 테리어</option>
+        <option>로디지안 리지백</option>
+        <option>그레이 하운드</option>
+        <option>그레이트 스위스 마운틴 독</option>
+        <option>세인트 버나드</option>
+        <option>스패니시 마스티프</option>
+        <option>캉갈 셰퍼드 독</option>
+        <option>피레니안 마스티프</option>
+        <option>드렌츠허 파트레이스</option>
+        <option>디어하운드</option>
+        <option>러시안 블랙 테리어</option>
+        <option>로마니안 미오리틱 셰퍼드 독</option>
+        <option>로마니안 카르파티안 셰퍼드 독</option>
+        <option>마요르카 마스티프</option>
+        <option>벌고 포인팅 독</option>
+        <option>머레머 앤드 아브루츠 쉽독</option>
+        <option>보르조이</option>
+        <option>재패니즈 친</option>
+        <option>잉글리시 토이 테리어 블랙 앤드 탠</option>
+        <option>콘티넨탈 토이 스패니얼</option>
+        <option>말티즈</option>
+        <option>볼로네즈</option>
+        <option>요크셔테리어</option>
+        <option>오스트레일리언 실키 테리어</option>
+        <option>러시안 토이</option>
+        <option>댄디 딘몬트 테리어</option>
+        <option>바셋 포브 드 브르타뉴</option>
+        <option>베들링턴 테리어</option>
+        <option>보더 테리어</option>
+        <option>비숑 프리제</option>
+        <option>셰틀랜드 쉽독</option>
+        <option>스키퍼키</option>
+        <option>실리엄 테리어</option>
+        <option>스카이 테리어</option>
+        <option>미디움 사이즈드 앵글로 프렌치 하운드</option>
+        <option>바베트</option>
+        <option>바센지</option>
+        <option>베르가마스코 셰퍼드 독</option>
+        <option>브리케 그리폰 방댕</option>
+        <option>부비에 드 아르덴느</option>
+        <option>가스콘 세인톤죠이스</option>
+        <option>러시안-유러피안 라이카</option>
+        <option>아키타 견</option>
+        <option>훗카이도 견</option>
+        <option>시코쿠 견</option>
+        <option>카이 견</option>
+        <option>보더콜리</option>
+        <option>푸들</option>
+        <option>빠삐용</option>
+        <option>오스트레일리안 캐틀독</option>
+      </select></div>
+    <br>
+    <br>
+    <div>
+      <label for="sex">성별</label>
+    </div>
+    <div>
+      <ul style="list-style: none;" class="rad">
+        <li class="radio">
+          <input type="radio" name="radio-buttons" class="status" value="1">암컷</li>
+        <li class="radio">
+          <input type="radio" name="radio-buttons" class="status" value="2">수컷</li>
+        <li class="radio">
+      </ul>
+    </div>
+
+    <div><button id="submit" type="submit">등록하기</button></div>
+
+    </form>
+</div>
+
+<script  src="js/login.js"></script>
+
+</body>
+</html>
