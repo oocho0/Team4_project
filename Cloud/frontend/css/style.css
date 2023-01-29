@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,700");
+
+.container {
+  background-color: #FFF6BD;
+  max-width: 440px;
+  padding: 28px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: auto;
+}
+
+#tabs {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.tab {
+  width: 100%;
+  height: 53px;
+  font-size: 17px;
+  color: #d76666;
+  background-color: #FFEFD5;
+  border: none;
+}
+
+/* .tab2 {
+  width: 100%;
+  height: 45px;
+  color: #fff;
+  background-color: #435259;
+  border: none;
+} */
+
+.tab__active {
+    background-color: #FFD4B2;
+}
+
+.tabContent {
+    box-sizing: border-box;
+    width:100%;
+    display:none;
+}
+.show {
+  display:block;
+}
+
+.tabContent__header {
+  color: #C2A78C;
+  text-align: center;
+  font-size: 44px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  margin: 0 0 35px 0;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form__row {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form__row:first-of-type.form__row_first {
+  margin-right: 0;
+}
+
+.form__row:first-of-type {
+  margin-right: 16px;
+}
+
+.form__input {
+  width: 100%;
+  height: 41px;
+  padding: 7px 10px;
+  font-size: 12px;
+  color: #623412;
+  background-color: transparent;
+  border: 1px solid #FFD4B2;
+  margin-bottom: 29px;
+  box-sizing: border-box;
+}
+
+.form__input:focus {
+  border: 1px solid #d76666;
+  outline: none;
+
+}
+
+.form__placeholder {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  color: #8B4513;
+  pointer-events: none;
+
+}
+.form__placeholder:after {
+  content: " *";
+  color: #A8422D;
+}
+
+/* 회원가입 로그인 크기 */
+.form__row_2 {
+  width: 318px;
+}
+
+.form__btn {
+  background-color: #FFD4B2;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  font-color: #d76666;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* .form__btn2 {
+  background-color: #1ab188;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+} */
+
+button {
+  background-color: #FFD4B2;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 65px;
+  height: 24px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-top: 17px;
+}
+
+/* 중복 확인 */
+.button2 {
+  background-color: #FFD4B2;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 65px;
+  height: 33px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-top: -70px;
+  display: inline-block;
+  position: absolute;
+  left: 321px;
+  top: 74px;
+}
+
+a {
+text-decoration-line: none;
+color: #d76666;
+}
+
+h2 {
+  text-align:center;
+  color:#E3C497;
+  font-weight:thin;
+  font-size: 48px;
+  margin:0 0 40px;
+  margin-top: 10%;
+}
