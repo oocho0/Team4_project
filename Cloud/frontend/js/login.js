@@ -15,7 +15,7 @@ var loadFile = function (event) {
 $('#submit').on('click', function(e){
 //   var dog_name = $('#dog0-name').text();
   console.log();
-  var name = "name";
+  var name = "chelsea";
   window.localStorage.setItem("name", name)
   // window.localStorage.setItem("name2", "chelsea2")
   window.location.href='login.html';
