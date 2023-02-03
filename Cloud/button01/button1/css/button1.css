@@ -1,0 +1,79 @@
+@keyframes bullet {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background: #2d2d2d;
+}
+
+.button-wrapper {
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  left: 20vw;
+  top: 10vh;
+  width: 89px;
+  padding: 2px;
+  border-radius: 6px;
+}
+.button-wrapper button {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid transparent !important;
+  outline: none !important;
+}
+.button-wrapper button.clicked .bullet {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 4px;
+  z-index: -1 !important;
+  transform-origin: 0% 50%;
+}
+.button-wrapper button.clicked .bullet.white {
+  animation: bullet 2s linear infinite forwards;
+  background: white;
+  box-shadow: 0 0 4px white;
+}
+.button-wrapper button.clicked .bullet.red {
+  animation: bullet 2s infinite forwards;
+  background: red;
+  box-shadow: 0 0 4px red;
+}
+.button-wrapper button.clicked .bullet.aqua {
+  animation: bullet 2s linear infinite forwards;
+  background: aquamarine;
+  box-shadow: 0 0 4px 8px aquamarine;
+}
+.button-wrapper button.clicked .bullet.green {
+  animation: bullet 2s linear infinite forwards;
+  background: lightgreen;
+  box-shadow: 0 0 0px 0px lightgreen;
+}
+.button-wrapper button.clicked .bullet.multiple {
+  background: white;
+  box-shadow: 0 0 0px 0px white;
+  animation: bullet 2s linear infinite forwards;
+}
+.button-wrapper button.clicked .bullet2.multiple {
+  background: red;
+  box-shadow: 0 0 0px 0px white;
+  animation: bullet 3s infinite forwards;
+}
+.button-wrapper button.clicked .bullet3.multiple {
+  background: aquamarine;
+  box-shadow: 0 0 0px 0px white;
+  animation: bullet 5s ease-in infinite forwards;
+}
+.button-wrapper button.clicked .bullet4.multiple {
+  background: lightgreen;
+  box-shadow: 0 0 0px 0px white;
+  animation: bullet 6s ease-out infinite forwards;
+}
