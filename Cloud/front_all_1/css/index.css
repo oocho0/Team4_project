@@ -1,0 +1,66 @@
+body {
+	background: #FFF6BD;
+}
+
+h1 {
+  text-align:center;
+  color:#C2A78C;
+  font-weight:thin;
+  font-size: 48px;
+  margin:0 0 40px;
+  margin-top: 4%;
+}
+
+/* 버튼 효과 수정 */
+#startbtn {
+  width: 370px;
+  height: 50px;
+  display:block;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  color: #623412;
+  margin: 0.2em 0.1em;
+  font-weight: 700;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: none;
+  border-bottom: 0.15em solid black;
+  border-radius: 3px;
+  padding: 0.65em 1.3em;
+  border-color: #e9b187;
+  background-image: linear-gradient(#FFD4B2, #FFD4B2);
+  position: absolute;
+  left: 575px;
+  top: 610px;
+}
+
+.button-lg {
+  padding: 1em 2em;
+}
+
+.button-sm,
+.button-xs {
+  font-size: 0.85em;
+  padding: 0.5em 1em;
+}
+
+.button-xs {
+  font-size: 0.85em;
+  padding: 0.25em 0.75em;
+}
+
+.startbtn:hover {
+  background: #FFD4B2;
+}
+
+a {
+text-decoration-line: none;
+color: #623412;
+}
+
+body { height: 150px;
+
+}
+
+html, body, button {font-family : Serif;}

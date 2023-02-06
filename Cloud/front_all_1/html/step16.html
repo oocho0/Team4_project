@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.left {
+            margin-left:37%;
+            width: 13%;
+            height : 95px;
+            float: left;
+            box-sizing: border-box;
+            text-align : center;
+        }
+        div.right {
+            padding-top:0.5%;
+            margin-right:37%;
+            width: 13%;
+            height : 95px;
+            float: right;
+            box-sizing: border-box;
+            text-align : center;
+        }
+
+        /* 버튼 효과 수정, 폰트 효과 수정 */
+        .select{
+            width : 80px;
+            height : 36px;
+            text-align: center;
+            font-family:'Source Sans Pro', sans-serif;
+            font-size: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+            line-height: 36px;
+            vertical-align: middle;
+            border: none;
+            padding: 0 16px;
+            white-space: nowrap;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 400;
+            background-image: none;
+
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+                 border-radius: 2px;
+
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+                 box-shadow: none;
+
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease;
+               transition: all 0.2s ease;
+
+            -ms-touch-action: manipulation;
+                touch-action: manipulation;
+
+            -webkit-user-select: none;
+               -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+
+             -webkit-backface-visibility: hidden;
+                     backface-visibility: hidden;
+
+             color: #ffffff;
+             background-color: #FFD4B2;
+
+        }
+
+        .select:hover,
+            .select:focus,
+            .select.focus,
+            .select:active,
+            .select.active {
+           color: #ffffff;
+           background-color: #fec294;
+    }
+
+        /* 버튼 효과 수정, 폰트 효과 수정 */
+        #submit-16{
+            width: 120px;
+            height: 36px;
+            text-align: center;
+            font-family:'Source Sans Pro', sans-serif;
+            font-size: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+            line-height: 36px;
+            vertical-align: middle;
+            border: none;
+            padding: 0 16px;
+            white-space: nowrap;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 400;
+            background-image: none;
+
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+                 border-radius: 2px;
+
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+                 box-shadow: none;
+
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease;
+               transition: all 0.2s ease;
+
+            -ms-touch-action: manipulation;
+                touch-action: manipulation;
+
+            -webkit-user-select: none;
+               -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+
+             -webkit-backface-visibility: hidden;
+                     backface-visibility: hidden;
+
+             color: #ffffff;
+             background-color: #FFD4B2;
+}
+
+#submit-16:hover,
+    #submit-16:focus,
+    #submit-16.focus,
+    #submit-16:active,
+    #submit-16.active {
+        color: #ffffff;
+        background-color: #fec294;
+    }
+
+    </style>
+</head>
+<body style="background-color: #FFF6BD; display: grid; grid-template-rows: 1fr 30px; text-align : center;">
+    <div>
+        <h1>기간 데이터</h1>
+        <button class = "select" onclick="make_gragh('week')">Week</button>
+        <button class = "select" onclick="make_gragh('month')" >Month</button>
+        <button class = "select" onclick="make_gragh('Year')">Year</button>
+        <h3 id ="title"></h3>
+            <div style="margin:0 auto;width:430px;height:280px;">
+                <!--차트가 그려질 부분-->
+                <canvas id="myChart"></canvas>
+            </div>
+        <br>
+        <div>
+            <div class = "left">
+                <img src="../image/dalgom.jpeg" height="80" width="80">
+            </div>
+            <div class = "right">
+                <span>누적 산책 거리</span><br>
+                <span id = "span0"></span><span>km</span>
+            </div>
+        </div>
+
+        <div>
+            <div class = "left">
+                <img src="../image/dalgom.jpeg" height="80px" width="80px">
+            </div>
+            <div class = "right">
+                <span>누적 산책 시간</span><br>
+                <span id = "span1"></span><span>분</span>
+            </div>
+        </div>
+
+        <div>
+            <div class = "left">
+                <img src="../image/dalgom.jpeg" height="80" width="80">
+            </div>
+            <div class = "right">
+                <span>누적 걸음수</span><br>
+                <span id = "span2"></span><span>걸음</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type='button'
+            value='확인'
+            id="submit-16"
+            onclick="location.href='./step15.html'"/>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript">// chart.js를 활용한 시각화 그래프
+
+////////////////// 기본 기능 함수
+
+        // 더하기 기능 +
+        const add = arr => arr.reduce((a, b) => a + b, 0);
+
+        // 배열 숫자로 변경
+        const toNumbers = arr => arr.map(Number);
+
+        // 날짜 format수정 +
+        function formatDate(date) {
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+            if (month.length < 2)
+                month = '0' + month;
+            if (day.length < 2)
+                day = '0' + day;
+
+            return [year, month, day].join('-');
+        }
+        var gragh_data_set = [];
+
+////////////// db에서 해당 댕댕이에 맞춰 산책 데이터 가져옴
+
+        var ENDPOINT = 'https://yfk3z7t5r5.execute-api.us-east-1.amazonaws.com/dev'
+        var user_id = localStorage.getItem("user_id");
+        var regist_num = localStorage.getItem("step_dog_rnum");
+        console.log(regist_num)
+        var data_original = []
+        $.ajax({
+            url: ENDPOINT +'/dogs/'+user_id+'/'+regist_num,
+            method: 'get',
+            async: false,
+            success: function(r){
+                data_original.push(r.dog_walk);
+                }
+        })
+        var data_set = data_original[0];
+        console.log(data_set);
+
+///////////////// 날짜별로 하나로 통합하기
+
+        // 오늘 산책 횟수, 산책시간, 산책 거리 계산
+        var daily_accum_data = {};
+        for(var i=0; i < data_set.length; i++){
+            var date = data_set[i][0].slice(0,10);
+            if (daily_accum_data[date]) {
+                    daily_accum_data[date][0] += data_set[i][2];
+                    daily_accum_data[date][1] += data_set[i][3];
+                    daily_accum_data[date][2] += data_set[i][4];
+            } else {
+                daily_accum_data[date] = [data_set[i][2],data_set[i][3],data_set[i][4]];
+            }
+        };
+        console.log("날짜 기준 통합",daily_accum_data)
+
+/////////////////// 이번주 날짜 산출하기 데이터 필터링 및 합산
+
+        // 이번주 날짜 계산
+        function make_week(){
+            var date = new Date();
+            var day = date.getDate();
+            year = date.getFullYear();
+            month = date.getMonth();
+            var week_day = [];
+            for (var i = 2; i<9 ;i++){
+            week_day.push(new Date(year, month, (day - date.getDay()) + i ).toISOString().slice(0,10));
+            };
+            return week_day;
+        }
+        var this_week = make_week();
+
+        // 이번주 누적 데이터 구하기
+        var week_accum_date = [];
+        var week_accum_time = [];
+        var week_accum_dist = [];
+        var week_accum_count = [];
+        for(var i = 0; i < this_week.length; i++){
+            if (daily_accum_data[this_week[i]]){
+                week_accum_date.push(this_week[i]);
+                week_accum_time.push(daily_accum_data[this_week[i]][0]);
+                week_accum_dist.push(daily_accum_data[this_week[i]][1]);
+                week_accum_count.push(daily_accum_data[this_week[i]][2]);
+            }
+        }
+        var total_week_accum_time = add(week_accum_time);
+        var total_week_accum_dist = add(week_accum_dist);
+        var total_week_accum_count = add(week_accum_count);
+
+        // 월~일 사이에 데이터가 있는지 없는 지 확인하여 있으면 해당 값 없으면 0
+        var this_week_y = [];
+        for ( var i = 0; i < this_week.length; i++) {
+            if ( week_accum_date.includes(this_week[i]) ){
+                var idx = week_accum_date.lastIndexOf(this_week[i]); // 해당 날짜값에 생성된 데이터의 인덱스를 가져옴
+                this_week_y.push(week_accum_time[idx]); // 시간을 그래프에 넣는다고 가정
+            }else{
+                this_week_y.push(0);
+            };
+        }
+
+        var this_week_x = ["월","화","수","목","금","토","일"];
+        // x 축 : this_week_x , y 축 : this_week_y
+        console.log(this_week_x);
+        console.log(this_week_y);
+        console.log(total_week_accum_time, total_week_accum_dist, total_week_accum_count);
+
+///////////// 이번달 날짜 산출하기
+
+        // 임시 데이터가 1월 뿐이라 실제 사용할 때는
+        // 주석 처리 date 해제하고 아래 date는 삭제
+        // var lastDay = new Date(date.getFullYear(), date.getMonth()+1,1).toISOString().slice(0,10);
+        // var day = new Date(date.getFullYear(), date.getMonth(), i).toISOString().slice(0,10);
+        function make_month() {
+            var i = 2
+            var date = new Date();
+            var lastDay = new Date(date.getFullYear(), date.getMonth()+1 ,1).toISOString().slice(0,10);
+            var this_month = []
+            while ( i < 35) {
+                var day = new Date(date.getFullYear(), date.getMonth(), i).toISOString().slice(0,10);
+                this_month.push(day);
+                if (day === lastDay) {
+                    break;
+                };
+                i++;
+            };
+            return this_month
+        };
+
+        // 이번달 날짜를 가져옴
+        var this_month = make_month();
+
+        // 이번달 그래프 x 축 범위 지정
+        var this_month_x = Array(this_month.length).fill().map((v,i)=>i+1);
+
+        // 이번달 필터링 및 합산
+        var month_accum_date = [];
+        var month_accum_time = [];
+        var month_accum_dist = [];
+        var month_accum_count = [];
+        for(var i = 0; i < this_month.length; i++){
+            if (daily_accum_data[this_month[i]]){
+                month_accum_date.push(this_month[i]);
+                month_accum_time.push(daily_accum_data[this_month[i]][0]);
+                month_accum_dist.push(daily_accum_data[this_month[i]][1]);
+                month_accum_count.push(daily_accum_data[this_month[i]][2]);
+            }
+        }
+        var total_month_accum_time = add(month_accum_time);
+        var total_month_accum_dist = add(month_accum_dist);
+        var total_month_accum_count = add(month_accum_count);
+
+       // 한달 사이 데이터가 있는지 없는지 확인하여 있으면 해당 값 없으면 0
+       var this_month_y = [];
+        for ( var i = 0; i < this_month.length; i++) {
+            if ( month_accum_date.includes(this_month[i]) ){
+                var idx = month_accum_date.lastIndexOf(this_month[i]); // 해당 날짜값에 생성된 데이터의 인덱스를 가져옴
+                this_month_y.push(month_accum_time[idx]); // 시간을 그래프에 넣는다고 가정
+            }else{
+                this_month_y.push(0);
+            };
+        }
+
+        // x 축 : this_month_x, y 축 : this_month_y
+        console.log(this_month_x);
+        console.log(this_month_y);
+        console.log(total_month_accum_time, total_month_accum_dist, total_month_accum_count);
+
+//////////////////////////// 1년!
+
+        //이번달 산책 기록 가져오기 daily_accum_data
+        var this_year_data = {}
+        for ( var i = 0; i < Object.keys(daily_accum_data).length; i++){
+            var full_date = Object.keys(daily_accum_data)[i];
+            var month = Object.keys(daily_accum_data)[i].slice(5,7); // 숫자로 바꿔줘야할듯toNumbers
+            if (this_year_data[parseInt(month)]) {
+                basket = this_year_data[parseInt(month)] + daily_accum_data[full_date][0];
+                this_year_data[parseInt(month)] = basket;
+            } else {
+                this_year_data[parseInt(month)] = daily_accum_data[full_date][0];
+            }
+        }
+
+        // 1년 12개월 x축 생성
+        var year_x = Array(12).fill().map((v,i)=>i+1);
+        this_year_x = year_x.map(x =>String(x) + "월");
+
+        // 올해 누적 데이터 this_year_data의 키값이 문자이기에 숫자로 바꿔 year_x과 비교하기 쉽게 만들기.
+        console.log("월",year_x);
+        console.log(Object.keys(this_year_data));
+        var month_year = Object.keys(this_year_data);
+
+        // 올해 총 누적
+        var date = new Date();
+        year = date.getFullYear();
+        var total_year_accum_time = 0;
+        var total_year_accum_dist = 0;
+        var total_year_accum_count = 0;
+        for (var i = 0; i < Object.keys(daily_accum_data).length; i++){
+            if ( year === parseInt(Object.keys(daily_accum_data)[i].slice(0,4)) ){
+                total_year_accum_time += daily_accum_data[Object.keys(daily_accum_data)[i]][0];
+                total_year_accum_dist += daily_accum_data[Object.keys(daily_accum_data)[i]][1];
+                total_year_accum_count += daily_accum_data[Object.keys(daily_accum_data)[i]][2];
+            }
+        }
+
+        // 일년사이 데이터가 있는지 없는지 확인하여 있으면 해당 값 없으면
+        var this_year_y = [];
+        console.log("year_x",year_x);
+        console.log("month_year",month_year);
+        for ( var i = 0; i < year_x.length; i++) {
+            if ( toNumbers(month_year).includes(year_x[i]) ){
+                console.log(year_x[i])
+                this_year_y.push(this_year_data[year_x[i]]); // 시간을 그래프에 넣는다고 가정
+            }else{
+                this_year_y.push(0);
+            };
+        }
+
+        // x 축 : this_year_x, y 축 : this_year_y
+        console.log(this_year_x)
+        console.log(this_year_y)
+        console.log(total_year_accum_time, total_year_accum_dist, total_year_accum_count)
+
+////////////선택x시 기본값 이번 주 통계량 보여주기
+
+        var gragh_data_set = []
+        gragh_data_set.push("line"); //그래프 타입
+        gragh_data_set.push(this_week_x ); // x라벨
+        gragh_data_set.push(this_week_y); // y 값
+        gragh_data_set.push(['rgba(255, 99, 132, 0.4)']); // 그래프 바 색상
+        gragh_data_set.push(['rgba(255, 99, 132, 1)']) // 그래프 선 색상
+        // 그래프 제목 출력
+        document.getElementById('title').innerHTML=this_week[0]+" ~ "+this_week[6];
+        // 합산 데이터 출력
+        var total_week_category = [total_week_accum_dist,total_week_accum_time,total_week_accum_count];
+        for (var i = 0; i < total_week_category.length; i++) {
+            document.getElementById('span'+String(i)).innerHTML=String(total_week_category[i]);
+        }
+        // 그래프 그리기
+        var context = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(context, {
+            type: gragh_data_set[0], // 차트의 형태
+            data: { // 차트에 들어갈 데이터
+                labels: gragh_data_set[1],//x 축
+                datasets: [
+                    { //데이터
+                        label: gragh_data_set[1], //차트 제목
+                        fill: true, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                        data: gragh_data_set[2], // x축 label에 대응되는 데이터 값(y축 값)
+                        backgroundColor: gragh_data_set[3] , // 그래프 바, 선 색상
+                        borderColor: gragh_data_set[4] , // 그래프 경계 색상
+                        borderWidth: 1 //경계선 굵기
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio :false,
+                scales:{yAxes:[{ticks: {beginAtZero: true}}]}, // y축 틱 0부터 시작하게 해줌
+                legend: {display: false}, // 그래프 상단 범례 삭제
+            }
+        });
+
+//////////// 기간별 그래프 그리기 그래프 선택시 출력물
+    function make_gragh(data){
+        var gragh_data_set = []
+        if(data === "week"){
+            gragh_data_set.push("line"); //그래프 타입
+            gragh_data_set.push(this_week_x); // x라벨
+            gragh_data_set.push(this_week_y); // y 값
+            gragh_data_set.push(['rgba(255, 99, 132, 0.4)']); // 그래프 바 색상
+            gragh_data_set.push(['rgba(255, 99, 132, 1)']) // 그래프 선 색상
+            // 그래프 제목 출력
+            document.getElementById('title').innerHTML=this_week[0]+" ~ "+this_week[6];
+            // 합산 데이터
+            var total_week_category = [total_week_accum_dist,total_week_accum_time,total_week_accum_count] ;
+            for (var i = 0; i < total_week_category.length; i++) {
+                document.getElementById('span'+String(i)).innerHTML=String(total_week_category[i]);
+            }
+        } else if (data === "month") {
+            gragh_data_set.push("line");
+            gragh_data_set.push(this_month_x);
+            gragh_data_set.push(this_month_y);
+            gragh_data_set.push(['rgba(54, 162, 235, 0.4)']); // 그래프 바 색상
+            gragh_data_set.push(['rgba(54, 162, 235, 1)']) // 그래프 선 색상
+            // 그래프 제목 출력
+            document.getElementById('title').innerHTML=this_month[0].slice(5,7)+"월";
+            // 합산 데이터
+            var total_month_category = [total_month_accum_dist,total_month_accum_time,total_month_accum_count] ;
+            for (var i = 0; i < total_month_category.length; i++) {
+                document.getElementById('span'+String(i)).innerHTML=String(total_month_category[i]);
+            }
+        } else {
+            gragh_data_set.push("bar");
+            gragh_data_set.push(this_year_x);
+            gragh_data_set.push(this_year_y);
+            gragh_data_set.push(['rgba(255, 159, 64, 0.4)','rgba(75, 192, 192, 0.4)','rgba(153, 102, 255, 0.4)','rgba(255, 159, 64, 0.4)','rgba(75, 192, 192, 0.4)','rgba(153, 102, 255, 0.4)','rgba(255, 159, 64, 0.4)','rgba(75, 192, 192, 0.4)','rgba(153, 102, 255, 0.4)','rgba(255, 159, 64, 0.4)','rgba(75, 192, 192, 0.4)','rgba(153, 102, 255, 0.4)']);
+            gragh_data_set.push(['rgba(255, 159, 64, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)']);
+            // 그래프 제목 출력
+            document.getElementById('title').innerHTML="1 년";
+            // 합산 데이터
+            var total_year_category = [total_year_accum_dist, total_year_accum_time, total_year_accum_count] ;
+            for (var i = 0; i < total_year_category.length; i++) {
+                document.getElementById('span'+String(i)).innerHTML=String(total_year_category[i]);
+            }
+        }
+        // 그래프 그리기
+        var context = document
+            .getElementById('myChart')
+            .getContext('2d');
+        var myChart = new Chart(context, {
+            type: gragh_data_set[0], // 차트의 형태
+            data: { // 차트에 들어갈 데이터
+                labels: gragh_data_set[1],//x 축
+                datasets: [
+                    { //데이터
+                        label: gragh_data_set[1], //차트 제목
+                        fill: true, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                        data: gragh_data_set[2], // x축 label에 대응되는 데이터 값(y축 값)
+                        backgroundColor: gragh_data_set[3] , // 그래프 바, 선 색상
+                        borderColor: gragh_data_set[4] , // 그래프 경계 색상
+                        borderWidth: 1 //경계선 굵기
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio :false,
+                scales:{yAxes:[{ticks: {beginAtZero: true}}]}, // y축 틱 0부터 시작하게 해줌
+                legend: {display: false}, // 그래프 상단 범례 삭제
+            }
+        });
+    }
+    </script>
+</body>
+</html>

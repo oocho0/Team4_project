@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/doglist.css" />
+    <title>Show dogreport2</title>
+</head>
+<body>
+    <div id="tb">
+        <div></div>
+        <div id="rl2">
+            <div id="leftbtn_div">
+                <input type='button' 
+                value=''
+                id="leftbtn" 
+                onclick="location.href='./show_dogreport.html'"/>
+            </div>
+            <div id="showdog_div2">
+                <!-- 레포트 내용 채우기 -->
+                <div id="report2_div">
+                    <div>
+                        <p>권장 횟수</p>
+                        <span id="dog-wn"></span><span> 회/일</span>
+                    </div>
+                    <div>
+                        <p>오늘 산책 횟수</p>
+                        <span id="today-wn"></span><span> 회</span>
+                    </div>
+                </div>
+                <div>
+                    <p>권장 시간</p>
+                    <div class="stats_graph_box">
+                        <div class="graph-text">
+                            <span id="min-width"></span><span id="mintime"></span><span id="max-width"></span><span id="maxtime"></span>     
+                        </div>                    
+                        <div class="graph">
+                            <!-- 비율에 따라 width 값 조정 -->
+                            <!-- 최소0 / min / max / 오늘data -->
+                            <div id="bar_min">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_middle">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_max">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div class="bar_maxplus">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <span>오늘 산책 시간 </span><span id="today-walktime"></span><span>분</span>
+                    <br>
+                    <p>권장 거리</p>
+                    <div class="stats_graph_box">
+                        <div class="graph-text">
+                            <span id="min-width2"></span><span id="mindis"></span><span id="max-width2"></span><span id="maxdis"></span>     
+                        </div>                    
+                        <div class="graph">
+                            <!-- 비율에 따라 width 값 조정 -->
+                            <!-- 최소0 / min / max / 오늘data -->
+                            <div id="bar_min2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_middle2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_max2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div class="bar_maxplus2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <span>오늘 산책 시간 </span><span id="today-walkdis"></span><span>km</span>
+                </div>
+            </div>
+        </div>  
+        <div id="btnset">
+            <input type='button' 
+            value='수정' 
+            id="updatebtn"
+            onclick="location.href='./update_dog.html'"/>
+            <input type='button' 
+            value='확인' 
+            id="submitbtn"
+            onclick="location.href='./doglist.html'"/>
+        </div>  
+        </div>  
+    </div>
+</body>
+</html>
+<!-- <script src="../js/index.js" charset="utf-8"></script> -->
+<script src="../js/show_dogreport2.js" charset="utf-8"></script>
