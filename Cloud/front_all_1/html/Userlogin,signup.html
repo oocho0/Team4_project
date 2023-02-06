@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Run dog</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="../css/personstyle.css">
+  <!-- <link rel="jsp" href="jsp/idconfirm.jsp"> -->
+
+</head>
+<body>
+  <div class="container">
+    <div id="tabs">
+      <button class="tab tab__active">회원가입</button>
+      <button class="tab">로그인</button>
+    </div>
+
+  <div class="tabsContent">
+    <div class="tabContent show">
+      <h2 class="tabContent__header"><b>Run dog</h2></b> <!-- ㅅㅈㅍㅇ -->
+      <form class="form" name="signUp">
+        <div class="form__row form__row_2">
+          <input type="text" id="signup-id" name="name" class="form__input form__input_name">
+          <label for="name" class="form__placeholder">아이디</label>
+        </div>
+        <div class="form__row">
+          <input type="email" id="signup-email" name="email" class="form__input form__input_email">
+          <label  for="email"class="form__placeholder" title="example@example.com">이메일</label>
+        </div>
+        <div class="form__row">
+          <input type="password" id="signup-pwd" name="pass" class="form__input form__input_pass">
+          <label for="pass" class="form__placeholder">비밀번호</label>
+        </div>
+        <!-- <div class="form__row">
+          <input type="phonenumber" name="phonenumber" class="form__input form__input_phonenumber" title="핸드폰 번호 입력하시길 바랍니다">
+          <label  for="phonenumber"class="form__placeholder">핸드폰 번호 입력</label>
+        </div> -->
+        <input type='button' class="form__btn tab" value='회원가입' onclick="submitSignUp()"/>
+        <input type='button' class="form__btn tab" value='취소' onclick="location.href='../index.html'"/>
+      </form>
+    </div>
+    <div class="tabContent">
+      <h2 class="tabContent__header"><b>Run dog</h2></b>
+      <form class="form" name="logIn">
+        <div class="form__row form__row_first">
+          <input type="text" id="login-id" name="name" class="form__input form__input_name">
+          <label  for="name"class="form__placeholder">아이디</label>
+        </div>
+        <div class="form__row">
+          <input type="password" id="login-pwd" name="pass" class="form__input form__input_pass">
+          <label for="pass" class="form__placeholder">비밀번호</label>
+        </div>
+        <input type='button' class="form__btn tab" value='로그인' onclick="loginUser()"/>
+        <input type='button' class="form__btn tab" value='취소' onclick="location.href='../index.html'"/>
+      </form>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script src="../js/script.js"></script>
+<script src="../js/amazon-cognito-identity.min.js"></script>
+<script src="../js/aws-sdk.js"></script>
+<script src="../js/cognito.js"></script>
+
+</html>
