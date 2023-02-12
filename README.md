@@ -38,7 +38,7 @@
   - 프로젝트 포트폴리오
  
 ### 참고자료
-#### 클라우드
+- 클라우드
 1. “FaaS를 넘어 엣지로” 차세대 엣지 서버리스 아키텍처의 현황과 전망”, https://www.itworld.co.kr/news/144224
 2. “개발자가 서버리스를 반기는 이유”, https://www.itworld.co.kr/news/112734
 3. “소프트웨어 개발 플랫폼은 진화한다" 2021 PaaS의 의미와 현황”, https://www.itworld.co.kr/news/200284
@@ -46,9 +46,9 @@
 5. “Function as a Service (FaaS): Everything You Need To Know”, https://kinsta.com/blog/function-as-a-service/
 6. “AWS IoT Core”, https://docs.aws.amazon.com/ko_kr/iot/latest/developerguide/what-is-aws-iot.html
 
-#### 빅데이터
+- 빅데이터
 1. KB금융지주 경영연구소 황원경, 손광표, 2021 한국 반려동물보고서-반려가구 현황과 노령견 양육실태
 2. 한국콘텐츠학회논문지, 오연서, 박진호, 2020, 감각 자극에 따른 반려견의 정서 상태 연구
 3. 한국무역협회, 박가현, 2022, 성장하는 펫케어 산업 최신트렌드와 우리 기업의 글로벌 경쟁력 강화방안
 
-#### IoT
+- IoT
