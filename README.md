@@ -13,7 +13,7 @@
 
 ## 시연 영상
 - 시연 영상
-  - (저희 영상 링크)
+  - https://drive.google.com/file/d/1mmbwCqt9DbUDqoVACt_APO-KvjFM_mPU/view?usp=share_link
 
 ### 협업 툴
 - WBS
