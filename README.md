@@ -20,7 +20,8 @@
   - ![image](https://github.com/oocho0/Team4_project/blob/main/image/WBS.png)
   - https://docs.google.com/spreadsheets/d/16PRsAfC7GaPmUF5p4Qa8G7brk0si4IjC/edit#gid=1021512975
 - Discord
-  - 사진 늘껀지 말껀지 정하는걸로
+  - <img width="955" alt="스크린샷 2023-02-15 오전 9 37 48" src="https://user-images.githubusercontent.com/111566062/218895259-2dbfa22d-7b4c-42c8-813e-d8fe73680b13.png">
+
 
 ### 폴더 내용
 - Scenario
