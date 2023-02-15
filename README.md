@@ -17,7 +17,7 @@
 
 ### 협업 툴
 - WBS
-  - 사진 늘껀지 말껀지 정하는걸로
+  - https://docs.google.com/spreadsheets/d/16PRsAfC7GaPmUF5p4Qa8G7brk0si4IjC/edit#gid=1021512975
 - Discord
   - 사진 늘껀지 말껀지 정하는걸로
 
