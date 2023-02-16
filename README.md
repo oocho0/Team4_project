@@ -56,3 +56,5 @@
 - IoT
 1. “클라우드 IoT 서비스 비교 (AWS, 구글, 네이버) 및 선택시 고려사항”, https://techblogpedia.com/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-iot-%EC%84%9C%EB%B9%84%EC%8A%A4-%EB%B9%84%EA%B5%90-aws-%EA%B5%AC%EA%B8%80-%EB%84%A4%EC%9D%B4%EB%B2%84-%EB%B0%8F-%EC%84%A0%ED%83%9D%EC%8B%9C-%EA%B3%A0%EB%A0%A4/
 2. “AWS IoT Core”, https://docs.aws.amazon.com/ko_kr/iot/latest/developerguide/what-is-aws-iot.html
+
+### 수상내역
