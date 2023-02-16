@@ -9,7 +9,7 @@
 팀원 : 구정민 (팀장 - Cloud), 조슬기, 안민규, 송강현 (Cloud), 김태민 (IoT), 김주희, 손지호, 강민구 (Big Data)
 
 수상기록 : 융복합 프로젝트 경진대회 대상
-![image](https://github.com/oocho0/Team4_project/blob/main/image/grand_prize.png){: width="60" height="40"}
+![image](https://github.com/oocho0/Team4_project/blob/main/image/grand_prize.png){: width="60%" height="40%"}
 
 ### 작업 코드 Git 주소
 링크 : https://github.com/orgs/dal-vengers/repositories
