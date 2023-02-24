@@ -24,11 +24,11 @@
 8. CI / CD
 
 #### 고찰
-  - Strong Point
+- Strong Point
   1. xx
-  - Weak Point
+- Weak Point
   1. xx
-  - Develop Point
+- Develop Point
   1. xx
 
 ### 참고문헌
