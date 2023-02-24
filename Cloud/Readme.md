@@ -26,9 +26,12 @@
 #### 고찰
   - Strong Point
   1. xx
+  2. xx
   - Weak Point
   1. xx
+  2. xx
   - Develop Point
   1. xx
+  2. xx
 
 ### 참고문헌
