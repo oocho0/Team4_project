@@ -9,10 +9,6 @@
 #### 프로젝트 진행 기간 | [ 2022.01.09 ~ 2023.02.16 ]
 #### 팀명 | dAl-vengers
 #### 수상내역 | 융복합 프로젝트 경진대회 대상
-<div align=center> 
-  <img src = "https://github.com/oocho0/Team4_project/blob/main/image/grand_prize.png" width="70%">
-</div>
-
 ### [📹 데모영상 보기](https://drive.google.com/file/d/1mmbwCqt9DbUDqoVACt_APO-KvjFM_mPU/view?resourcekey)
 <br>
 
