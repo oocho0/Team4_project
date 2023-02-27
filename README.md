@@ -32,9 +32,12 @@
 - Bigdata
   - 프로젝트 데이터, 빅데이터 시나리오, 빅데이터반 수행 보고서
 - Cloud
-  - db ERD, 클라우드 아키텍쳐, 클라우드반 수행 보고서
+  - db ERD, 클라우드 아키텍쳐, 클라우드반 수행 보고서, cloud Readme
 - IoT
   - 사용 센서, IoT 시나리오, IoT반 수행 보고서
+- Frontend
+  - frontend code
+  (기능, ui 참조 : 최종 발표 ppt_0216)
 - 주차별_프로젝트_수행일지
   - 주차별 수행 내역
 
