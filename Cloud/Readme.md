@@ -24,7 +24,7 @@
   <img src="https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=white">
   <img src="https://img.shields.io/badge/mysql-FF9900?style=for-the-badge&logo=mysql&logoColor=white">
   <img src="https://img.shields.io/badge/git-FFCA28?style=for-the-badge&logo=git&logoColor=black">
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=Linux&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white"/>
   <br>
 </div>
 
