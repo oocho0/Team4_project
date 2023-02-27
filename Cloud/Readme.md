@@ -1,10 +1,24 @@
-# 달벤져스 클라우드 수행 보고서
+# [같이 걷개] 어플 cloud part
 
 ### AWS에서 제공하는 FaaS 플랫폼인 Lambda를 이용해 Serverless 인프라 구현
 
 #### 분석 (인프라 관련 스터디 내용 + 어느 기능까지 구현할껀지에 대한 분석)
 
-#### 설계 (아키텍쳐 부분 + 어떻게 짰는지 자세하게)
+## 💫 기술 스택
+<div align=center> 
+  <img src="https://img.shields.io/badge/Amazon AWS-339933?style=for-the-badge&logo=Amazon AWS&logoColor=white">
+  <img src="https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/mysql-FF9900?style=for-the-badge&logo=mysql&logoColor=white">
+  <img src="https://img.shields.io/badge/git-FFCA28?style=for-the-badge&logo=git&logoColor=black">
+  <br>
+</div>
+
+#### ⚙ 설계
+<div align=center>
+  <img src="https://user-images.githubusercontent.com/80815575/221609782-580e6504-d2e5-46a6-ad2c-d1e1d7080a02.png">
+</div>
+
+
 
 #### 구현
 1. Cognito
