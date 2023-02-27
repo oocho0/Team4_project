@@ -62,7 +62,7 @@
 - AWS의 code pipeline을 이용해 CI/CD 구현. 깃허브에 액션 발생 시 자동으로 실행. 업로드 되어 있는 코드와 yaml 파일에 따라 build를 진행하여 apk 파일 생성 후 S3에 저장
 
 ## 🛠 고찰 (IoT, Bigdata - Cloud 협업점, Strong Point 등)
-### 보고서 파일 참조
+- 보고서 파일 참조
 
 ## 🏆 contributor 및 part
 #### 구정민 (Cognito / Lambda / RDS / DynomoDB / API Gateway)
