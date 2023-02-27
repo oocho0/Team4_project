@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="../css/style_map.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/key.js"></script>
+    <script src="../js/weather_map.js"></script>
+</head>
+<body>
+    <section>
+        <article width="100%">
+            <table style="width:100%; height: 80px; background-color: #91684A">
+                <tbody style="width:100%; height: 80px; background-color: #91684A">
+                    <tr>
+                        <td id="name_name" style= "padding:0; background-color:#91684A ;font-size:40px; font-family: 'ImcreSoojin'; color:#FFFBDB; text-align:center; font-weight:100;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="box" class="box" width="100%">
+                <tr id="timerbox" class="timerbox">
+                    <td width="50%" style="background-color: #FFFBDB;">
+                        <div id="time" class="time"><span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>.<span id="micro">00</span></div>
+                    </td>
+                    <td width="50%" style="background-color: #FFFBDB; text-align:right;">
+                        <div><span id="kmtext" style="font-weight:900;">0.0</span> km&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    </td>
+                </tr>
+            </table>
+        </article>
+        <article>
+            <!-- 지도를 표시할 div 입니다 -->
+            <div id="mapwrap">
+                <!-- 지도가 표시될 div -->
+                <div id="map" style="width:100%;height:500px;"></div>
+                <!-- 지도 위에 표시될 마커 카테고리 -->
+                <div id="weather">
+                    <button type="button" id='weather_open' style="background-color: #fdebda; border:solid 2px #493323; display:block;"><img src="../image/mapicon_sun.png"></button>
+                    <div id='weather_info' style="background-color: #fdebda; border:2px solid #493323; border-radius: 30px; padding:5px; display:none;">
+                        <table style="border-collapse:separate; border-spacing: 0 10px;">
+                            <tr>
+                                <td style='width:15%; height:30px;'></td>
+                                <td rowspan='2' class="head" style="font-family: 'ImcreSoojin'; vertical-align:bottom;">
+                                    <img id="weather_img" style="width:45px; height:45px; object-fit:contain; top:10px; right:80px;"/>
+                                </td>
+                                <td style='width:17%;'></td>
+                                <td valign="bottom" style="font-family: 'ImcreSoojin'; font-size:16px; color: #686868;">미세</td>
+                                <td style='width:15%;'></td>
+                            </tr>
+                            <tr>
+                                <td style='width:15%;'></td>
+                                <td style='width:17%;'></td>
+                                <td valign="bottom" style="font-family: 'ImcreSoojin'; font-size:17px; color:#493323;"><span id="pm"></span></td>
+                                <td style='width:15%;'></td>
+                            </tr>
+                            <tr>
+                                <td style='width:15%;'></td>
+                                <td valign="bottom" style="font-family: 'ImcreSoojin'; font-size:16px; color: #686868;">기온</td>
+                                <td style='width:17%;'></td>
+                                <td valign="bottom" style="font-family: 'ImcreSoojin'; font-size:16px; color: #686868;">습도</td>
+                                <td style='width:15%;'></td>
+                            </tr>
+                            <tr>
+                                <td style='width:15%;'></td>
+                                <td valign="bottom" style="font-family: 'ImcreSoojin'; font-size:17px; color:#493323;"><span id="temp"></span>℃</td>
+                                <td style='width:17%;'></td>
+                                <td valign="bottom" style="font-family: 'ImcreSoojin'; font-size:17px; color:#493323;"><span id="hum"></span>%</td>
+                                <td style='width:15%;'></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <script>
+                    $('#weather_open').click(function(){
+                        $('#weather_open').hide(); //클릭 시 첫 번째 요소 숨김
+                        $("#weather").css('z-index',"999");
+                        $('#weather_info').show(); //클릭 시 두 번째 요소 표시
+                    });
+                    $('#weather_info').click(function(){
+                        $('#weather_open').show();
+                        $("#weather").css('z-index',"5");
+                        $('#weather_info').hide();
+                    });
+                </script>
+                <div id="list">
+                    <button type="button" id="list_1" style="background-color: #fdebda; border: solid 2px #493323;"><img src="../image/mapicon_list.png"></button>
+                </div>
+                <div id="category" style="background-color: #FFFBDB;">
+                    <div style="margin-left:20px; color: #000;">
+                        <div class="categories"><input type="checkbox" id="trashMenu" name="check" value="쓰레기통" style="margin:40px 20px 10px"/> 쓰레기통</div>
+                        <div class="categories"><input type="checkbox" id="toiletMenu" name="check" value="화장실" style="margin:10px 20px;"/> 화장실</div>
+                        <div class="categories"><input type="checkbox" id="vetMenu" name="check" value="동물병원" style="margin:10px 20px;"/> 동물병원</div>
+                        <div class="categories"><input type="checkbox" id="dogcafeMenu" name="check" value="애견카페" style="margin:10px 20px;"/> 애견카페</div>
+                        <div class="categories"><input type="checkbox" id="cafeMenu" name="check" value = "애견동반카페" style="margin:10px 20px;"/> 애견동반카페</div>
+                        <div class="categories"><input type="checkbox" id="resMenu" name="check" value = "애견동반식당" style="margin:10px 20px;"/> 애견동반식당</div>
+                        <div class="categories"><input type="checkbox" id="playMenu" name="check" value ="놀이터" style="margin:10px 20px;"/> 무료 반려견 운동장</div>
+                        <div class="categories"><input type="checkbox" id="parkMenu" name="check" value ="공원" style="margin:10px 20px;"/> 공원</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="categories"><button type="button" id="setting" class="btn btn-primary btn-sm" style="display: inline-block; margin:10px 20px; padding: 0px 5px; font-family: 'ImcreSoojin'; font-size: 26px; background-color:#91684A; color: #FFFBDB; width: 70%; height: 44px;border-radius:20px;">완료</button></div>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        $('#list').show(); //페이지를 로드할 때 표시할 요소
+                        $('#category').hide(); //페이지를 로드할 때 숨길 요소
+                    });
+                    $('#list').click(function(){
+                        $('#list').hide(); //클릭 시 첫 번째 요소 숨김
+                        $('#category').show(); //클릭 시 두 번째 요소 표시
+                    });
+                    $('#setting').click(function(){
+                        $('#list').show();
+                        $('#category').hide();
+                    });
+                </script>
+                <div id="recommend">
+                    <button type="button" style="background-color: #fdebda; border: solid 2px #493323;"><img src="../image/mapicon_thumb.png"></button>
+                </div>
+                <form id="select" style="background-color: #FFFBDB;">
+                    <div>
+                        <div class="radio_top">종류</div>
+                        <input type="radio" id="cafe1" name="type" value="애견카페" style="margin:10px 10px 10px 40px;" checked/> 애견카페
+                        <input type="radio" id="dogcafe1" name="type" value="애견동반카페" style="margin:10px 10px 10px 25px" /> 애견동반카페
+                    </div>
+                    <div id="dogcafe2">
+                        <div class="radio_top">오늘은 어떤 곳?</div>
+                        <div><input type="radio" name="cafe" value="1" style="margin:10px 10px 10px 40px;" checked/> JMT 맛</div>
+                        <div><input type="radio" name="cafe" value="2" style="margin:10px 10px 10px 40px;"/> 예쁜 사진</div>
+                        <div><input type="radio" name="cafe" value="3" style="margin:10px 10px 10px 40px;"/> 좋은 시설</div>
+                        <div><input type="radio" name="cafe" value="4" style="margin:10px 10px 10px 40px;"/> 이런 가성비</div>
+                    </div>
+                    <div id="cafe2">
+                        <div class="radio_top">오늘은 어떤 곳?</div>
+                        <div><input type="radio" name="cafe" value="1" style="margin:10px 10px 10px 40px" checked/> JMT 맛</div>
+                        <div><input type="radio" name="cafe" value="2" style="margin:10px 10px 10px 40px"/> 예쁜 사진</div>
+                        <div><input type="radio" name="cafe" value="3" style="margin:10px 10px 10px 40px"/> 좋은 시설</div>
+                        <div><input type="radio" name="cafe" value="4" style="margin:10px 10px 10px 40px"/> 대화가 중요해</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div class="radio_top"> 거리 </div>
+                        <div>
+                            <input type="radio" name="distance" value=500 style="margin:10px 10px 10px 40px;" checked/> 500m
+                            <input type="radio" name="distance" value=1000 style="margin:10px 10px 10px 10px;"/> 1km
+                            <input type="radio" name="distance" value=1500 style="margin:10px 10px 10px 10px;"/> 1.5km
+                        </div>
+                        <div>
+                            <input type="radio" name="distance" value=2000 style="margin:10px 10px 10px 40px;"/> 2km &nbsp; 
+                            <input type="radio" name="distance" value=3000 style="margin:10px 10px 10px 16px;"/> 3km
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <input id="submit" type='button' value="완료" class="btn btn-primary btn-sm" style="margin : 10px 0 ; display: inline-block; font-family: 'ImcreSoojin'; font-size: 26px; background-color:#91684A; color: #FFFBDB; width: 70%; height: 44px; border-radius:20px; border-color: #493323">
+                    </div>
+                </form>
+                <div id="myloca">
+                    <button type="button" style="background-color: #fdebda; border: solid 2px #493323;"><img src="../image/mylocation.png" style="width: 30px; height: 30px; margin-top: 5px;" onclick="mylocation()"></button>
+                </div>
+                <script>
+                    $(function() {
+                        $('#recommend').show(); //페이지를 로드할 때 표시할 요소
+                        $('#select').hide(); //페이지를 로드할 때 숨길 요소
+                        $('#select #cafe2').hide();
+                    });
+                    $('#recommend').click(function(){
+                        $('#recommend').hide(); //클릭 시 첫 번째 요소 숨김
+                        $('#select').show(); //클릭 시 두 번째 요소 표시
+                    });
+                    $('#submit').click(function(){
+                        $('#recommend').show();
+                        $('#select').hide();
+                    });
+                    $("input[name='type']").change(function(){
+                        if($("input[name='type']:checked").val() == '애견동반카페'){
+                            $('#select #dogcafe2').hide();
+                            $('#select #cafe2').show();
+                        }else if($("input[name='type']:checked").val() == '애견카페'){
+                            $('#select #dogcafe2').show();
+                            $('#select #cafe2').hide();
+                        }
+                    });
+                </script>
+            </div>
+            <!-- src : kakao key 를 추가하세요. -->
+            <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6075751d111977dfe10aaa2dec967efd"> 
+                
+            </script>
+            <script>
+                function makeOverListener(map, marker, infowindow) {
+                    return function() {
+                        infowindow.open(map, marker);
+                    };
+                }
+
+                // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+                function makeOutListener(infowindow) {
+                    return function() {
+                        infowindow.close();
+                    };
+                }
+
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                    mapOption = {
+                    center: new kakao.maps.LatLng(37.49079514, 126.9170456), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                    };
+                var markers=[];
+                function setMarkers(map) {
+                    for (var i = 0; i < markers.length; i++) {
+                        markers[i].setMap(map);
+                    }            
+                }   
+
+                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                $('#setting').click(function(){
+
+                    var arr=[];
+                    setMarkers(null);
+                    var place = $("input:checkbox[name=check]:checked").each(function(){arr.push($(this).val())});
+                    
+                    var place_type="";
+                    for (i in arr){
+                        place_type+=arr[i];
+                        place_type+=',';
+                    }
+                    console.log(place_type);
+                    var positions=[];
+                    var Endpoint="https://yfk3z7t5r5.execute-api.us-east-1.amazonaws.com/dev";
+                    if (place_type!=""){
+                        $.ajax({
+                            type:"GET",
+                            url :Endpoint+"/place/"+place_type,
+                            success:function(r){
+                                for (i in r["result"]){
+                                    positions.push({title: r['result'][i][0],type:r['result'][i][4], 
+                                    latlng: new kakao.maps.LatLng(r['result'][i][2], r['result'][i][3]),address:r['result'][i][1]})
+                                }
+                                for (var i = 0; i < positions.length; i ++) {
+                                    // 마커 이미지의 이미지 크기 입니다.
+                                    var imageSize = new kakao.maps.Size(25, 25); 
+                                    if (positions[i].type=="화장실"){
+                                        var imageSrc = "../image/toilet.png";                 
+                                    }
+                                    else if(positions[i].type=="동물병원"){
+                                        var imageSrc = "../image/hospital.png"; 
+                                    }
+                                    else if(positions[i].type=="애견동반식당"){
+                                        var imageSrc = "../image/rest.png";                
+                                    }
+                                    else if(positions[i].type=="애견동반카페"){
+                                        var imageSrc = "../image/dog_cafe.png";               
+                                    }
+                                    else if(positions[i].type=="쓰레기통"){
+                                        var imageSrc = "../image/trash.png";            
+                                    }
+                                    else if(positions[i].type=="공원"){
+                                        var imageSrc = "../image/park.png";               
+                                    }
+                                    else if(positions[i].type=="놀이터"){
+                                        var imageSrc = "../image/play.png";               
+                                    }
+                                    
+                                    // else{
+                                    //     var imageSrc = "";                
+                                    // }
+                                    // 마커 이미지를 생성합니다    
+                                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+                                
+                                    // 마커를 생성합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map, // 마커를 표시할 지도
+                                        position: positions[i].latlng, // 마커를 표시할 위치
+                                        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                                        image : markerImage, // 마커 이미지
+                                        clickable:true
+                                    });
+                                    markers.push(marker);
+                                    // 마커 제목 , 주소
+                                    var iwContent = '<div style="font-size:12px; padding:12px; width:180px;">'+
+                                                    '   <div style="margin-bottom:5px;">'+positions[i].title+'</div>'+
+                                                    '   <div>'+positions[i].address+'</div>'+
+                                                    '</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                                                    iwRemoveable = true;
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: iwContent, // 인포윈도우에 표시할 내용
+                                        removable : iwRemoveable
+                                    });
+                                    
+                                    kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow));
+                                }
+
+                            },
+                            fail:function(err){
+                                console.log(err);
+                            }
+                        });
+                }
+                });
+                var recommendmarkers=[];
+                function setreMarkers(map) {
+                    for (var i = 0; i < recommendmarkers.length; i++) {
+                        recommendmarkers[i].setMap(map);
+                    }            
+                }   
+
+                $('#submit').click(function(){
+                    var imageSrc = "../image/dog_cafe.png";
+    
+                    var type =$('input[name=type]:checked').val();
+                    var category=$('input[name=cafe]:checked').val();
+                    var distance=$('input[name=distance]:checked').val();
+
+                    $.ajax({
+                        type:"GET",
+                        url :ENDPOINT+"/place/recommend/"+type+'/'+category+'/'+distance,
+                        success:function(r){
+                            setreMarkers(null);
+                            for (var i = 0; i < Object.keys(r).length; i ++) {
+                                // 마커 이미지의 이미지 크기 입니다.
+                                var imageSize = new kakao.maps.Size(16, 16); 
+                            
+                                // 마커 이미지를 생성합니다    
+                                var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+                                var latlng= new kakao.maps.LatLng(r[String(i)]['lat'], r[String(i)]['lng']);
+                                // 마커를 생성합니다
+                                var recommendmarker = new kakao.maps.Marker({
+                                    map: map, // 마커를 표시할 지도
+                                    position: latlng, // 마커를 표시할 위치
+                                    title : r[String(i)].name, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                                    image : markerImage, // 마커 이미지
+                                    clickable:true
+                                });
+                                recommendmarkers.push(recommendmarker);
+                                // 마커 제목 , 주소
+                                console.log(r[String(i)]);
+                                var iwContent = '<div style="font-size:12px; padding:12px; width:180px;">'+
+                                                '   <div style="margin-bottom:5px;">'+r[String(i)].name+'</div>'+
+                                                '   <div>'+r[String(i)].address+'</div>'+
+                                                '</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                                                iwRemoveable = true;
+                                var infowindow = new kakao.maps.InfoWindow({
+                                    content: iwContent, // 인포윈도우에 표시할 내용
+                                    removable : iwRemoveable
+                                });
+                                kakao.maps.event.addListener(recommendmarker, 'click', makeOverListener(map, recommendmarker, infowindow));
+                            }
+
+                        },
+                        fail:function(err){
+                            console.log(err);
+                        }
+                    });
+                });
+            </script>
+        </article>
+        <article>
+            <div>
+                <div class="btnBox">
+                    <div id="restarted">
+                        <button type="button" id="restart" class="btn btn-primary" style="width:46%; height:44px; font-family: 'ImcreSoojin'; font-size:26px; background-color: #91684A; color:#FFFBDB;border-radius:20px;">재시작</button>
+                        <button type="button" id="stop1" class="btn btn-primary" style="width:46%; height:44px; font-family: 'ImcreSoojin'; font-size:26px; background-color: #493323; color:#FFFBDB;border-radius:20px;">산책 끝</button>
+                    </div>
+                    <div id="paused">
+                        <button type="button" id="pause" class="btn btn-primary" style="width:46%; height:44px; font-family: 'ImcreSoojin'; font-size:26px; background-color: #91684A; color:#FFFBDB;border-radius:20px;">일시정지</button>
+                        <button type="button" id="stop2" class="btn btn-primary" style="width:46%; height:44px; font-family: 'ImcreSoojin'; font-size:26px; background-color: #493323; color:#FFFBDB;border-radius:20px;">산책 끝</button>
+                    </div>
+                    <div id="main">
+                        <button type="button" id="start" class="btn btn-primary" style="width:94%; height:44px; font-family: 'ImcreSoojin'; font-size:26px; background-color: #493323; color:#FFFBDB; border-radius:20px;">시작</button>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        $('#main').show();
+                        $('#restarted').hide();
+                        $('#paused').hide();
+                        $("#name_name").html("산책 하기");
+                    });
+                    $('#start').click(function(){
+                        $('#main').hide();
+                        $('#restarted').hide();
+                        $('#paused').show();
+                        $('#name_name').html("산책 중");
+                    });
+                    $('#pause').click(function(){
+                        $('#main').hide();
+                        $('#restarted').show();
+                        $('#paused').hide();
+                        $('#name_name').html("쉬는 중");
+                    });
+                    $('#restart').click(function(){
+                        $('#main').hide();
+                        $('#restarted').hide();
+                        $('#paused').show();
+                        $('#name_name').html("산책 중");
+                    });
+                    $('#stop1').click(function(){
+                        $('#main').show();
+                        $('#restarted').hide();
+                        $('#paused').hide();
+                        $('#name_name').html("산책 끝");
+                    });
+                    $('#stop2').click(function(){
+                        $('#main').show();
+                        $('#restarted').hide();
+                        $('#paused').hide(); 
+                        $('#name_name').html("산책 끝");
+                    });
+                </script>
+                <script>
+                    var linePath=[];
+                    var polyline = new kakao.maps.Polyline({
+                        path: linePath, // 선을 구성하는 좌표배열 입니다
+                        strokeWeight: 5, // 선의 두께 입니다
+                        strokeColor: '#FFAE00', // 선의 색깔입니다
+                        strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                        strokeStyle: 'solid' // 선의 스타일입니다
+                    });
+                    polyline.setMap(map);  
+                    // 이동 경로 표시 
+                    
+                    var mymarker = new kakao.maps.Marker({
+                            position: new kakao.maps.LatLng(0,0)
+                        });
+                    function mylocation(){
+                        var Endpoint="https://yfk3z7t5r5.execute-api.us-east-1.amazonaws.com/dev";
+                        $.ajax({
+                            type:"GET",
+                            url :Endpoint+"/gps/"+2,
+                            success:function(r){
+                                var moveLatLon = new kakao.maps.LatLng(r[0], r[1]);
+                                map.panTo(moveLatLon);
+                            },
+                            fail:function(err){
+                            }
+                        });
+                    }
+                    var moveLatLon ;
+                    function GetGpsData(){
+                        var Endpoint="https://yfk3z7t5r5.execute-api.us-east-1.amazonaws.com/dev";
+                        $.ajax({
+                            type:"GET",
+                            url :Endpoint+"/gps/"+2,
+                            success:function(r){
+                                $('#kmtext').html((Math.round(r[2]*100))/100);
+                                mymarker.setMap(null);
+                                linePath.push(new kakao.maps.LatLng(r[0], r[1]));
+                                moveLatLon = new kakao.maps.LatLng(r[0], r[1]);
+                                polyline.setMap(map);
+                                mymarker = new kakao.maps.Marker({
+                                    position: moveLatLon
+                                });
+                                mymarker.setMap(map)
+                                $("#showdistance").text(r[2]);
+                                var moveLatLon = new kakao.maps.LatLng(r[0], r[1]);
+                                polyline.setPath(linePath);
+                            },
+                            fail:function(err){
+                            }
+                        });
+                    };
+
+                    window.onload = function(){
+                        let timer_sec;
+                        let timer_min;
+                        let timer_hour;
+                        let timer_micro;
+                        let timer = 0;
+
+                        //click start button
+                        document.getElementById("start").addEventListener("click", function(){
+                            //console.log(timer);
+                            mylocation();
+                            walkgo=setInterval(GetGpsData,3000);
+                            if(timer > 0){
+                                return;
+                            }
+                            var micro = parseInt(document.getElementById("micro").innerText);
+                            var sec = parseInt(document.getElementById("sec").innerText);
+                            var min = parseInt(document.getElementById("min").innerText);
+                            var hour = parseInt(document.getElementById("hour").innerText);
+
+                            //start seconds
+                            timer_micro = setInterval(function(){
+                                micro++;
+                                if(micro == 100) {
+                                    micro = "00";
+                                } else if(micro < 10){
+                                    micro = "0" + micro;
+                                }
+                                document.getElementById("micro").innerText = micro;
+                            }, 10);
+
+                            //start seconds
+                            timer_sec = setInterval(function(){
+                                //console.log(i);
+                                sec++;
+                                if(sec == 60) {
+                                    sec = "00";
+                                } else if(sec < 10){
+                                    sec = "0" + sec;
+                                }
+                                document.getElementById("sec").innerText = sec;
+                            }, 1000);
+
+                            //start minutes
+                            timer_min = setInterval(function(){
+                                min++;
+                                if(min == 60) {
+                                    min = 0;
+                                } else if(min < 10){
+                                    min = "0" + min;
+                                }
+                                document.getElementById("min").innerText = min;
+                            }, 60000);
+
+                            //start hours
+                            timer_hour = setInterval(function(){
+                                //console.log(hour);
+                                hour++;
+                                if(hour < 10){
+                                    hour = "0" + hour;
+                                }
+                                document.getElementById("hour").innerText = hour;
+                            }, 3600000);
+                            timer++;
+                            //console.log(timer);
+                            // starttime();
+                        });
+
+                        // function starttime(){
+                        //     var start_time = window.localStorage.getItem("start_time")
+                            
+                        //     $.ajax({
+                        //         url: ENDPOINT+'/startdis',
+                        //         method: 'post',
+                        //         datatype: 'json',
+                        //         async: true,
+                        //         data:JSON.stringify({
+                        //             reported_id : "2",
+                        //             start_time : start_time
+                        //         }),
+                        //         success: function(r){
+                        //             console.log("success", r);
+
+                        //         },
+                        //         fail: function(err){
+                        //             console.log('failed', err);
+                        //             alert('failed! reloading...')
+                        //         },
+                        //         complete: function(r){
+                        //             console.log('completed', r);
+                        //         }
+                        //     })
+                        //     $.ajax({
+                        //         url: ENDPOINT+'/startdis',
+                        //         method: 'post',
+                        //         datatype: 'json',
+                        //         async: true,
+                        //         data:JSON.stringify({
+                        //             reported_id : "3",
+                        //             start_time : start_time
+                        //         }),
+                        //         success: function(r){
+                        //             console.log("success", r);
+
+                        //         },
+                        //         fail: function(err){
+                        //             console.log('failed', err);
+                        //             alert('failed! reloading...')
+                        //         },
+                        //         complete: function(r){
+                        //             console.log('completed', r);
+                        //         }
+                        //     })
+                        //};
+
+
+                        //click pause button
+                        document.getElementById("pause").addEventListener("click", function(){
+                            clearInterval(walkgo);
+
+                            pause();
+                        });
+                        function pause(){
+                            clearInterval(timer_micro);
+                            clearInterval(timer_sec);
+                            clearInterval(timer_min);
+                            clearInterval(timer_hour);
+                            timer--;
+                            if(timer < 0)
+                                timer = 0;
+                        }
+
+                        //click restart button
+                        document.getElementById("restart").addEventListener("click", function(){
+
+                            mylocation();
+                            walkgo=setInterval(GetGpsData,3000);
+                
+                            //console.log(timer);
+                            if(timer > 0){
+                                return;
+                            }
+                            var micro = parseInt(document.getElementById("micro").innerText);
+                            var sec = parseInt(document.getElementById("sec").innerText);
+                            var min = parseInt(document.getElementById("min").innerText);
+                            var hour = parseInt(document.getElementById("hour").innerText);
+
+                            //start seconds
+                            timer_micro = setInterval(function(){
+                                micro++;
+                                if(micro == 100) {
+                                    micro = "00";
+                                } else if(micro < 10){
+                                    micro = "0" + micro;
+                                }
+                                document.getElementById("micro").innerText = micro;
+                            }, 10);
+
+                            //start seconds
+                            timer_sec = setInterval(function(){
+                                //console.log(i);
+                                sec++;
+                                if(sec == 60) {
+                                    sec = "00";
+                                } else if(sec < 10){
+                                    sec = "0" + sec;
+                                }
+                                document.getElementById("sec").innerText = sec;
+                            }, 1000);
+
+                            //Restart minutes
+                            timer_min = setInterval(function(){
+                                min++;
+
+                                if(min == 60) {
+                                    min = 0;
+                                } else if(min < 10){
+                                    min = "0" + min;
+                                }
+
+                                document.getElementById("min").innerText = min;
+                            }, 60000);
+
+                            //restart hours
+                            timer_hour = setInterval(function(){
+                                //console.log(hour);
+                                hour++;
+                                if(hour < 10){
+                                    hour = "0" + hour;
+                                }
+                                document.getElementById("hour").innerText = hour;
+                            }, 3600000);
+                            timer++;
+                            //console.log(timer);
+                        });
+
+                        //click stop1 button
+                        document.getElementById("stop1").addEventListener("click", function(){
+                            clearInterval(walkgo);
+
+                            document.getElementById("micro").innerText = "00";
+                            document.getElementById("sec").innerText = "00";
+                            document.getElementById("min").innerText = "00";
+                            document.getElementById("hour").innerText = "00";
+                            stop();
+                        });
+
+                        //click stop2 button
+                        document.getElementById("stop2").addEventListener("click", function(){
+                            clearInterval(walkgo);
+
+                            document.getElementById("micro").innerText = "00";
+                            document.getElementById("sec").innerText = "00";
+                            document.getElementById("min").innerText = "00";
+                            document.getElementById("hour").innerText = "00";
+                            stop();
+                        });
+
+                        function locations(){
+                            location.href='finalpage.html'
+                        }
+                        function stop(){
+                            clearInterval(timer_micro);
+                            clearInterval(timer_sec);
+                            clearInterval(timer_min);
+                            clearInterval(timer_hour);
+                            timer--;
+                            if(timer < 0)
+                                timer = 0;
+
+                            let rnumlist = window.localStorage.getItem("walking_dog_rnum")
+                            console.log(rnumlist)
+                        
+                            rnumlist = rnumlist.replace(/"/g, '');
+                            rnumlist = rnumlist.replace(/\[/g, '');
+                            rnumlist = rnumlist.replace(/\]/g, '');
+
+                            rnums =  (rnumlist.split(','));
+                            console.log(rnums)
+
+                            start_time = window.localStorage.getItem("start_time")
+                            
+                            $.ajax({
+                                url: ENDPOINT+'/walkend',
+                                method: 'post',
+                                datatype: 'json',
+                                async: true,
+                                data:JSON.stringify({
+                                    regist_num : rnums[0],
+                                    reported_id : "3",
+                                    start_time : start_time
+                                }),
+                                success: function(r){
+                                    console.log("success", r);
+
+                                },
+                                beforeSend: function () {
+                                    var width = 0;
+                                    var height = 0;
+                                    var left = 0;
+                                    var top = 0;
+
+                                    width = 100;
+                                    height = 100;
+
+                                    top = ( $(window).height() - height ) / 2 + $(window).scrollTop();
+                                    left = ( $(window).width() - width ) / 2 + $(window).scrollLeft();                        
+
+                                    if($("#div_ajax_load_image").length != 0) {
+                                            $("#div_ajax_load_image").css({
+                                                    "top": top+"px",
+                                                    "left": left+"px"
+                                            });
+                                            $("#div_ajax_load_image").show();
+                                            setTimeout(() => locations(),10000);
+                                    }
+                                    else {
+                                            $('body').append('<div id="div_ajax_load_image" style="position:absolute; top:' + top + 'px; left:' + left + 'px; width:' + width + 'px; height:' + height + 'px; z-index:9999; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; "><img src="../image/loading.gif" style="width:100px; height:100px;"></div>');
+                                            setTimeout(() => locations(), 10000);
+                                        }
+                                        
+
+                                },
+                                fail: function(err){
+                                    console.log('failed', err);
+                                    alert('failed! reloading...')
+                                },
+                                complete: function(r){
+                                    console.log('completed', r);
+                                    stop2();
+                                }
+                            })
+                        };
+                        
+                        function stop2(){
+                            console.log("2")
+                            let rnumlist = window.localStorage.getItem("walking_dog_rnum")
+                        
+                            rnumlist = rnumlist.replace(/"/g, '');
+                            rnumlist = rnumlist.replace(/\[/g, '');
+                            rnumlist = rnumlist.replace(/\]/g, '');
+
+                            rnums =  (rnumlist.split(','));
+                            console.log(rnums)
+                            
+                            $.ajax({
+                                url: ENDPOINT+'/walkend',
+                                method: 'post',
+                                datatype: 'json',
+                                async: true,
+                                data:JSON.stringify({
+                                    regist_num : rnums[1],
+                                    reported_id : "2",
+                                    start_time : start_time
+                                }),
+                                success: function(r){
+                                    console.log("success", r);
+                                },
+                                fail: function(err){
+                                    console.log('failed', err);
+                                    alert('failed! reloading...')
+                                },
+                                complete: function(r){
+                                    console.log('completed', r);
+                                    // $("#div_ajax_load_image").hide();
+                                    // setTimeout(location.href='finalpage.html',50000);
+                                }
+                            })
+                            $.ajax({
+                                url: ENDPOINT+'/walkend',
+                                method: 'get',
+                                success: function(r){
+                                    console.log("success", r);
+                                },
+                                fail: function(err){
+                                    console.log('failed', err);
+                                    alert('failed! reloading...')
+                                },
+                                complete: function(r){
+                                }
+                            })
+                        };
+                    }
+                </script>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

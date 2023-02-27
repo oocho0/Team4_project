@@ -1,0 +1,157 @@
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,700"); */
+
+@font-face {
+    font-family: 'ImcreSoojin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	background: #FFFBDB;
+}
+
+.container {
+  background-color: #FFFBDB;
+  max-width: 440px;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: auto;
+}
+
+#tabs {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+/* 로그인 스와치 버튼 폰트 수정 */
+.tab {
+  width: 100%;
+  height: 53px;
+  font-family: 'ImcreSoojin';
+  font-size: 26px;
+  color: #fffbdb;
+  background-color: #91684A;
+  border: none;
+}
+
+/* 회원가입 스와치 버튼 폰트 수정 */
+.tab__active {
+    background-color: #493323;
+    font-family: 'ImcreSoojin';
+    font-size: 26px;
+}
+
+.tabContent {
+    box-sizing: border-box;
+    width:100%;
+    display:none;
+}
+.show {
+  display:block;
+}
+
+/* # 타이틀 이름 폰트 수정 */
+.tabContent__header {
+  color: #9f6d47;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'ImcreSoojin';
+  font-weight: 300;
+  margin: 0 0 35px 0;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form__row {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form__row:first-of-type.form__row_first {
+  margin-right: 0;
+}
+
+/* 입력 창 폰트 수정 */
+.form__input {
+  width: 100%;
+  height: 48px;
+  /* padding: 7px 10px; */
+  font-size: 26px;
+  color: #91684A;
+  background-color: transparent;
+  border: solid 1px #EAAC7F;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  font-family: 'ImcreSoojin';
+  padding-left: 10px;
+}
+
+.form__input:focus {
+  border: solid 1px #e5a170;
+  outline: none;
+
+}
+
+/* 입력 창 버튼마다 바뀔 떄 효과 폰트 수정 */
+.form__placeholder {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'ImcreSoojin';
+  font-size: 22px;
+  color: #91684A;
+  pointer-events: none;
+}
+
+/* 입력 창 버튼마다 바뀔 떄 효과 폰트 수정 */
+.form__placeholder:after {
+  /* content: " *"; */
+  color: #91684A;
+  font-family: 'ImcreSoojin';
+  font-size: 22px;
+}
+
+/* 회원가입 완료, 취소, 로그인 버튼 및 폰트 수정 */
+.form__btn {
+  background-color: #493323;
+  font-family: 'ImcreSoojin';
+  /* font-weight: 500; */
+  font-size: 26px;
+  color: #FFFBDB;
+  /* font-color: #d76666; */
+  letter-spacing: 1px;
+  /* text-transform: uppercase; */
+  margin-bottom: 10px;
+  border-radius: 20px;
+  /* width: 80%; */
+}
+
+button {
+  /* background-color: #FFD4B2; */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  /* text-transform: uppercase; */
+  width: 65px;
+  height: 24px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-top: 17px;
+  
+}
+
+h2 {
+  text-align:center;
+  color:#E3C497;
+  font-weight:thin;
+  font-size: 48px;
+  margin:0 0 40px;
+  margin-top: 10%;
+}
+

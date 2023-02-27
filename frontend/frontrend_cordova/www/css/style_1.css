@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'ImcreSoojin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #FFFBDB;
+}
+
+/* 버튼 효과 수정 */
+.menu-bar {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: #EAAC7F;
+    /* box-shadow: 0 8px 15px rgba(0, 0, 0, .1); */
+    font-family: 'ImcreSoojin';
+    min-width: 56px;
+    line-height: 84px;
+    padding: 0;
+    border-radius: 28px;
+    min-width: 56px;
+    width: 56px;
+    height: 56px;
+    line-height: 84px;
+    padding: 0;
+    border-radius: 28px;
+}
+
+.menu-bar .line{
+    width: 25px;
+    height: 20px;
+    margin: 3px;
+    /* background: #ebebeb; */
+    background-image: url(../image/drop_bone.png);
+    background-size: contain;
+    transition: all 300ms ease-out;
+    font-family: 'ImcreSoojin';
+}
+
+.nav-bar .nav-items{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: #1c1b1ac4;
+    clip-path: circle(30px at 93% 8%);
+    transition: all 800ms ease-out;
+    opacity: 0;
+    z-index: 1;
+    font-family: 'ImcreSoojin';
+}
+
+.nav-bar .nav-items .nav-links{
+    color: #ebebeb;
+    font-size: 32px;
+    font-weight: lighter;
+    margin: 10px 17px;
+    font-family: 'ImcreSoojin';
+    text-decoration: none;
+}
+
+.nav-bar .nav-items .nav-mini{
+    color: #ebebeb;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 3px 17px;
+    font-family: 'OTWelcomeRA';
+    text-decoration: none;
+}
+
+.nav-bar.toggle .nav-items{
+    clip-path: circle(100%);
+    opacity: 1;
+    font-family: 'ImcreSoojin';
+}
+
+.nav-bar.toggle .menu-bar{
+    box-shadow: none;
+    font-family: 'ImcreSoojin';
+    background-color: black;
+    opacity: 0.4;
+}
+
+.nav-bar.toggle .menu-bar .line:nth-child(1){
+    transform: rotate(-45deg);
+    margin: 0;
+}
+/* .nav-bar.toggle .menu-bar .line:nth-child(3){
+    opacity: 0;
+}
+.nav-bar.toggle .menu-bar .line:nth-child(2){
+    transform: rotateZ(45deg);
+    margin: -2px;
+} */
+
+.drop {
+    width: 100%;
+    height: 200px;
+    margin: 20px;
+    padding: 10px;
+}

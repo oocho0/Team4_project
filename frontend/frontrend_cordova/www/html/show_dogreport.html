@@ -1,0 +1,72 @@
+<!-- page8 (정민) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/doglist.css" />
+</head>
+<style>
+    @font-face {
+        font-family: 'ImcreSoojin';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'OTWelcomeRA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
+<body style="background-color: #FFFBDB; font-family: OTWelcomeRA; font-size: 22px;">
+    <table style="width:100%; height: 80px; background-color: #AF886B">
+        <tr>
+            <td style=" width:100%; font-size:40px; text-align: center; font-family: ImcreSoojin; color: #fffbdb; font-weight: 100;">강아지 기본 정보</td>
+        </tr>
+    </table>
+    <div id="tb">
+        <div></div>
+        <div id="rl">
+            <div id="showdog_div">
+                <div></div>
+                <div>
+                    <span">이름&nbsp;|&nbsp;</span><span id="dog-name" style="font-weight: bold;"></span><br><br>
+                    <span>생일&nbsp;|&nbsp;</span><span id="dog-birth" style="font-weight: bold;"></span><br><br>
+                    <span>등록번호&nbsp;|&nbsp;</span><span id="dog-rnum" style="font-weight: bold;"></span><br><br>
+                </div>
+                <div>
+                    <br>
+                    <span>몸무게&nbsp;|&nbsp;</span><span id="dog-weight" style="font-weight: bold;"></span><span> kg</span><br><br>
+                    <span>품종&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</span><span id="dog-kind" style="font-weight: bold;"></span><br>
+                </div>
+                <div></div>
+            </div>
+            <div id="rightbtn_div">
+                <input type='button' 
+                value=''
+                id="rightbtn" 
+                onclick="location.href='./show_dogreport2.html'"/> 
+            </div>
+        </div>  
+        <div id="btnset">
+            <input type='button' 
+            value='수정' 
+            id="updatebtn"
+            style="background-color: #91684A;"
+            onclick="location.href='./update_dog.html'"/>
+            <input type='button' 
+            value='확인' 
+            id="submitbtn"
+            onclick="location.href='./doglist.html'"/>
+        </div>  
+    </div>
+</body>
+</html>
+<!-- <script src="../js/index.js" charset="utf-8"></script> -->
+<script src="../js/key.js"></script>
+<script src="../js/show_dogreport.js" charset="utf-8"></script>
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/doglist.css" />
+    <title>Show dogreport2</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'ImcreSoojin';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'OTWelcomeRA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
+<body style="background-color: #FFFBDB; font-family: OTWelcomeRA; font-size: 18px;">
+    <table style="width:100%; height: 80px; background-color: #AF886B">
+        <tr>
+            <td style=" width:100%; font-size:40px; text-align: center; font-family: ImcreSoojin; color: #fffbdb; font-weight: 100;">산책 가이드</td>
+        </tr>
+    </table>
+    <div id="tb">
+        <div></div>
+        <div id="rl2">
+            <div id="leftbtn_div">
+                <input type='button' 
+                value=''
+                id="leftbtn" 
+                onclick="location.href='./show_dogreport.html'"/>
+            </div>
+            <div id="showdog_div2">
+                <!-- 레포트 내용 채우기 -->
+                <div></div>
+                <div id="report2_div">
+                    <div><hr style="width: 260px; border: solid 2px #bababa;"></div>
+                    <div>
+                        <!-- <div style="float: left; width: 10%;"></div> -->
+                        <div style="float: left; width: 50%;">
+                            <p style="font-weight: bold; font-size: 20px;">산책 권장 횟수</p>
+                            <span id="dog-wn"></span><span> 회/일</span>
+                        </div>
+                        <div style="float: left; width: 50%;">
+                            <p style="font-weight: bold; font-size: 20px;">오늘 산책 횟수</p>
+                            <span id="today-wn" style="font-weight: bold; color: #8B0000;"></span><span style="font-weight: bold; color: #8B0000;"> 회/일</span>
+                        </div>
+                        <!-- <div style="float: left; width: 10%;"></div> -->
+                    </div>
+                    <div><hr style="width: 260px; border: solid 2px #bababa;"></div>
+                </div>
+
+                <div style="margin-left: auto; margin-right: auto;">
+                    <p style="font-weight: bold; margin-top: 10px; margin-bottom: 5px;font-size: 20px;">권장 시간</p>
+                    <div class="stats_graph_box">
+                        <div class="graph-text">
+                            <span id="min-width"></span><span id="mintime"></span><span id="max-width"></span><span id="maxtime"></span>     
+                        </div>                    
+                        <div class="graph">
+                            <div id="bar_min">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_middle">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_max">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div class="bar_maxplus">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <span>오늘 산책 시간&nbsp;&nbsp;</span><span id="today-walktime" style="color: #8B0000; font-weight: bold;"></span><span style="color: #8B0000; font-weight: bold;">분</span>
+                </div>
+                <div style="margin-left: auto; margin-right: auto;">
+                    <p style="font-weight: bold; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">권장 거리</p>
+                    <div class="stats_graph_box">
+                        <div class="graph-text">
+                            <span id="min-width2"></span><span id="mindis"></span><span id="max-width2"></span><span id="maxdis"></span>     
+                        </div>                    
+                        <div class="graph">
+                            <!-- 비율에 따라 width 값 조정 -->
+                            <!-- 최소0 / min / max / 오늘data -->
+                            <div id="bar_min2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_middle2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div id="bar_max2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                            <div class="bar_maxplus2">
+                                <dl class="desc">
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <span>오늘 산책 거리&nbsp;&nbsp;</span><span id="today-walkdis" style="color: #8B0000; font-weight: bold;"></span><span style="color: #8B0000; font-weight: bold;">km</span>
+                </div>
+                <div style="margin-left: auto; margin-right: auto;">
+                    <div><hr style="width: 260px; border: solid 2px #bababa; margin: 9px 13px;"></div>
+                </div>
+                <div></div>
+            </div>
+        </div>    
+        <div id="btnset">
+            <input type='button' 
+            value='수정' 
+            id="updatebtn"
+            style="background-color: #91684A;"
+            onclick="location.href='./update_dog.html'"/>
+            <input type='button' 
+            value='확인' 
+            id="submitbtn"
+            onclick="location.href='./doglist.html'"/>
+        </div>  
+        </div>  
+    </div>
+</body>
+</html>
+<!-- <script src="../js/index.js" charset="utf-8"></script> -->
+<script src="../js/key.js"></script>
+<script src="../js/show_dogreport2.js" charset="utf-8"></script>

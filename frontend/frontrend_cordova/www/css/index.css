@@ -1,0 +1,46 @@
+body {
+	background: #FFFBDB;
+}
+
+/* 폰트 수정 */
+h1 {
+  text-align:center;
+  color:#C2A78C;
+  font-weight:thin;
+  font-size: 48px;
+  margin:0 0 40px;
+  margin-top: 4%;
+}
+
+/* 이름 폰트 수정 */
+p {
+	font-family: 'ImcreSoojin';
+	font-size: 60px;
+	color: #AD8162;
+}
+
+/* 버튼 효과 수정 및 폰트 수정 */
+#startbtn {
+  width: 70%;
+  height: 55px;
+  border-radius: 10px;
+  /* border: solid 2px #72523b; */
+  border: none;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  font-size: 40px; 
+  background-color: #91684A; 
+  color: #fffbdb; font-family: ImcreSoojin; margin-top: 45px;
+}
+
+a {
+text-decoration-line: none;
+color: #623412;
+}
+
+body { height: 150px;
+
+}
+
+html, body, button {font-family : Serif;}

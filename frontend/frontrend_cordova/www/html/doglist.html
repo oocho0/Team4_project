@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="../css/doglist.css" />
+        <link rel="stylesheet" href="../css/style_1.css">
+        <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+        <title></title>
+    </head>
+    <style>
+        @font-face {
+            font-family: 'ImcreSoojin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'OTWelcomeRA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <body style="background-color: #FFFBDB; font-family: OTWelcomeRA;">
+        <nav class="nav-bar">
+            <div class="menu-bar">
+                <div class="line"></div>
+            </div>
+            <div class="nav-items">
+                <a href="#" class="nav-links" style="margin:25px 17px; font-size:35px; font-weight:700; font-family: 'ImcreSoojin';"><span id="user_name"></span></a>
+                <br>
+                <a href="frontend.html" class="nav-links" style="font-family: 'ImcreSoojin'; color: #faf8db;">홈으로</a>
+                <a href="doglist.html" class="nav-links" style="font-family: 'ImcreSoojin'; color: #faf8db;">반려견 관리</a>
+                <a href="step15.html" class="nav-links" style="font-family: 'ImcreSoojin'; color: #faf8db;">누적 기록</a>
+                <a target="_blank" href="mailto:helloword@na.com" class="nav-links" style="margin:35px 15px; font-size:23px; font-weight:200; font-family: 'ImcreSoojin';">개발자에게 의견주기</a>
+                <div class="nav-mini" style="font-family: 'OTWelcomeRA';">ver 1.0.0</div>
+                <div class="nav-mini" style="font-family: 'OTWelcomeRA';">dAl_vengers</div>
+            </div>
+        </nav>
+        <table style="width:100%; height: 80px; background-color: #AF886B">
+            <tr>
+                <td style=" width:100%; font-size:40px; text-align: center; font-family: ImcreSoojin; color: #fffbdb; font-weight: 100;">반려견 관리</td>
+            </tr>
+        </table>
+        <script src="../js/menubar.js"></script>
+        <div id="tb">
+            <div></div>
+            <div>
+                <div id="no-dog"></div>
+                <div id="dog1">
+                    <div></div>
+                    <div class="dog-face">
+                        <img id="dog1-face">
+                    </div>
+                    <div class="dog-info">
+                        <p id="dog1-name" style="font-size: 26px;"></p>
+                        <p id="dog1-birth" style="font-size: 18px;"></p>
+                    </div>
+                    <div></div>
+                </div>
+                <div id="dog2">
+                    <div></div>
+                    <div class="dog-face">
+                        <img id="dog2-face">
+                    </div>
+                    <div class="dog-info">
+                        <p id="dog2-name" style="font-size: 26px;"></p>
+                        <p id="dog2-birth" style="font-size: 18px;"></p>
+                    </div>
+                    <div></div>
+                </div>
+                <div id="dog3">
+                    <div></div>
+                    <div class="dog-face">
+                        <img id="dog3-face">
+                    </div>
+                    <div class="dog-info">
+                        <p id="dog3-name" style="font-size: 26px;"></p>
+                        <p id="dog3-birth" style="font-size: 18px;"></p>
+                    </div>
+                    <div></div>
+                </div>
+                </form>
+            </div>
+            <div id="plusbtndiv">
+                <input type='button'
+                value='+'
+                id="plusbtn"
+                onclick="location.href='doglogin.html'"/>
+            </div>
+        </div>
+        <script src="../js/key.js"></script>
+        <script src="../js/doglist.js"></script>
+    </body>
+</html>

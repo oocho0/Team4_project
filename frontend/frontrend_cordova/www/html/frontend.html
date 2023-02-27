@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/style_1.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+        </script>
+        <script src="../js/key.js"></script>
+        <script src="../js/dog_info.js"></script>
+        <script src="../js/weather.js"></script>
+    </head>
+    <style>
+        @font-face {
+            font-family: 'ImcreSoojin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'OTWelcomeRA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <body style="background-color:#FFFBDB">
+        <div style="clear: both;"></div>
+        <nav class="nav-bar">
+            <div class="menu-bar">
+                <div class="line"></div>
+            </div>
+            <div class="nav-items">
+                <a href="#" class="nav-links" style="margin:25px 17px; font-size:35px; font-weight:700; font-family: 'ImcreSoojin';"><span id="user_name"></span></a>
+                <br>
+                <a href="frontend.html" class="nav-links" style="font-family: 'ImcreSoojin'; color: #FFFBDB;">홈으로</a>
+                <a href="doglist.html" class="nav-links" style="font-family: 'ImcreSoojin'; color: #FFFBDB;">반려견 관리</a>
+                <a href="step15.html" class="nav-links" style="font-family: 'ImcreSoojin'; color: #FFFBDB;">누적 기록</a>
+                <a target="_blank" href="mailto:helloword@na.com" class="nav-links" style="margin:35px 15px; font-size:22px; font-family: 'ImcreSoojin';">개발자에게 의견주기</a>
+                <div class="nav-mini" style="font-family: 'OTWelcomeRA';">ver 1.0.0</div>
+                <div class="nav-mini" style="font-family: 'OTWelcomeRA';">dAl_vengers</div>
+            </div>
+        </nav>
+        <script src="../js/menubar.js"></script>
+        <section>
+            <article style="text-align:center;">
+                <table style="width:100%; height: 80px;">
+                    <tr>
+                        <td style= "background-color:#91684A;font-size:40px; font-family: 'ImcreSoojin'; color:#FFFBDB; font-weight:100;">같이걸을개</td>
+                    </tr>
+                </table>
+                <table style="width:100%; height: 80px;">
+                    <tr style="height: 50px; background-color: #FFFBDB;">
+                        <td style="background-color: #FFFBDB;"></td>
+                        <td rowspan='2' class="head" style="font-family: 'ImcreSoojin'; width:16%; font-size:20px; background-color: #FFFBDB; color:#67350f; vertical-align:bottom;">
+                            <img id="weather" style="width:58px;"/>
+                        </td>
+                        <td valign="bottom" style="font-family: 'ImcreSoojin'; width:16%; font-size:18px; background-color: #FFFBDB; color: #686868;">미세</td>
+                        <td valign="bottom" style="font-family: 'ImcreSoojin'; width:16%; font-size:18px; background-color: #FFFBDB; color: #686868;">온도</td>
+                        <td valign="bottom" style= "font-family: 'ImcreSoojin'; width:16%; font-size:18px; background-color: #FFFBDB; color: #686868;">습도</td>
+                        <td style="background-color: #FFFBDB;"></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #FFFBDB;"></td>
+                        <td valign="top" class="head" style="font-family: 'ImcreSoojin'; width: 16%; font-size:20px; background-color: #FFFBDB; color:#493323;">
+                            <span id="pm"></span>
+                        </td>
+                        <td valign="top" class="head" style="font-family: 'ImcreSoojin'; width: 16%; font-size:20px; background-color: #FFFBDB; color:#493323;">
+                            <span id="temp"></span>℃
+                        </td>
+                        <td valign="top" class="head" style="font-family: 'ImcreSoojin'; width: 16%; font-size:20px; background-color: #FFFBDB; color:#493323;">
+                            <span id="hum"></span>%
+                        </td>
+                        <td style="background-color: #FFFBDB;"></td>
+                    </tr>
+                </table>
+            </article>
+            <article style="margin: 120px 100px; background-color: #FFFBDB; display:flex; align-items: center; justify-content: center;">
+                <div id="empty"></div>
+                <div class="dog" style="position: relative;">
+                    <img style="height:100px; width:100px; border-radius: 50%; border:solid 5px #EAAC7F;" id="dog1-face"/><p class="dog_name" style="margin-top: 16px; font-family: 'OTWelcomeRA'; font-size: 23px;"></p>
+                    <div class="dog_check" style="position: absolute; top:0px; left:0px; display: none;">
+                        <img src="../image/check.png" style="background-color:rgba(0,0,0,0.6); height:100px; width:100px; border-radius: 50%; border:solid 5px #EAAC7F;"/>
+                    </div>
+                </div>
+                <div class="dog" style="position: relative;">
+                    <img style="height:100px; width:100px; border-radius: 50%; border:solid 5px #EAAC7F;" id="dog2-face"/><p class="dog_name" style="margin-top: 16px; font-family: 'OTWelcomeRA'; font-size: 23px;"></p>
+                    <div class="dog_check" style="position: absolute; top:0px; left:0px; display: none;">
+                        <img src="../image/check.png" style="background-color:rgba(0,0,0,0.6); height:100px; width:100px; border-radius: 50%; border:solid 5px #EAAC7F;"/>
+                    </div>
+                </div>
+                <div class="dog" style="position: relative;">
+                    <img style="height:100px; width:100px; border-radius: 50%; border:solid 5px #EAAC7F;" id="dog3-face"/><p class="dog_name" style="margin-top: 16px; font-family: 'OTWelcomeRA'; font-size: 23px;"></p>
+                    <div class="dog_check" style="position: absolute; top:0px; left:0px; display: none;">
+                        <img src="../image/check.png" style="background-color:rgba(0,0,0,0.6); height:100px; width:100px; border-radius: 50%; border:solid 5px #EAAC7F;"/>
+                    </div>
+                </div>
+                <div id="select_dog"></div>
+            </article>
+            <article style="display:flex; justify-content:center; align-items:center; background-color: #FFFBDB; padding:20px 20px 40px 20px;">
+                <button type="button" id="btnWalking" class="btn btn-lg btn-primary" style="font-family: 'ImcreSoojin'; line-height:44px; font-size: 26px; width: 94%; height:44px; border-radius: 20px; background-color: #493323; color: #FFFBDB;">산책 가기</button>
+            </article>
+        </section> 
+    </body>
+</html>
